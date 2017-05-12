@@ -35,15 +35,18 @@
             <?php endif; ?>
             
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="<?= $this->router->to('siteHome') ?>">Back to site</a></li>
+                <li><a href="<?= $this->router->to('siteHome') ?>"><i class="fa fa-globe" aria-hidden="true"></i> Back to site</a></li>
                 <?php if($this->user->isLogin()): ?>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user" aria-hidden="true"></i>
                         <?= $this->user->fullname ?>
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="<?= $this->router->to('adminMeLogout') ?>">Logout</a></li>
+                        <li>
+                            <a href="<?= $this->router->to('adminMeLogout') ?>"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                        </li>
                     </ul>
                 </li>
                 <?php endif; ?>
