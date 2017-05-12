@@ -13,7 +13,7 @@
   min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
   margin-bottom: @navbar-margin-bottom;
   border: 1px solid transparent;
-
+  
   // Prevent floats from breaking the navbar
   &:extend(.clearfix all);
 
@@ -184,6 +184,16 @@
   }
 }
 
+// Drawer toggle
+.navbar-drawer {
+    margin-right: @navbar-padding-horizontal;
+    float: left;
+    
+    @media (max-width: @grid-float-breakpoint) {
+      margin-right: 0;
+      margin-left: @navbar-padding-horizontal;
+    }
+}
 
 // Navbar toggle
 //
@@ -231,6 +241,14 @@
 
 .navbar-nav {
   margin: (@navbar-padding-vertical / 2) -@navbar-padding-horizontal;
+  
+  > .divider{
+    width: 1px;
+    background-color: #e5e5e5;
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
 
   > li > a {
     padding-top:    10px;

@@ -39,11 +39,13 @@ return [
         'event'
     ],
     '_services' => [
-        'admin' => 'Admin\\Service\\Admin'
+        'admin' => 'Admin\\Service\\Admin',
+        'can_i' => 'Admin\\Service\\Cani'
     ],
     '_autoload' => [
         'classes' => [
             'Admin\\Service\\Admin'                 => 'modules/admin/service/Admin.php',
+            'Admin\\Service\\Cani'                  => 'modules/admin/service/Cani.php',
             'AdminController'                       => 'modules/admin/controller/AdminController.php',
             'Admin\\Controller\\HomeController'     => 'modules/admin/controller/HomeController.php',
             'Admin\\Controller\\MeController'       => 'modules/admin/controller/MeController.php'
@@ -94,6 +96,18 @@ return [
                 'rules'     => [
                     'required'  => true
                 ]
+            ]
+        ]
+    ],
+    
+    'admin' => [
+        'menu' => [
+            'home' => [
+                'label'  => 'Home',
+                'target' => 'adminHome',
+                'icon'   => 'home',
+                'perms'  => 'read_home',
+                'order'  => 1
             ]
         ]
     ]

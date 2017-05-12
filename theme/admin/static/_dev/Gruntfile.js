@@ -34,6 +34,7 @@ module.exports = function(grunt) {
 //                         'js/bootstrap-datetimepicker.js',
 //                         'js/bootstrap-typeahead.js',
 //                         'js/Chart.js',
+                        'js/drawer.js',
                         'js/main.js'
                     ]
                 }

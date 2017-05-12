@@ -3397,6 +3397,16 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-left: -15px;
   }
 }
+.navbar-drawer {
+  margin-right: 15px;
+  float: left;
+}
+@media (max-width: 768px) {
+  .navbar-drawer {
+    margin-right: 0;
+    margin-left: 15px;
+  }
+}
 .navbar-toggle {
   position: relative;
   float: right;
@@ -3428,6 +3438,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-nav {
   margin: 7.5px -15px;
+}
+.navbar-nav > .divider {
+  width: 1px;
+  background-color: #e5e5e5;
+  height: 50px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .navbar-nav > li > a {
   padding-top: 10px;
@@ -4230,6 +4247,9 @@ a.thumbnail.active {
   margin-bottom: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+}
+.list-group-item .fa {
+  width: 20px;
 }
 a.list-group-item,
 button.list-group-item {
@@ -5759,6 +5779,95 @@ fieldset[disabled] .btn-danger.active {
   border-color: #dcdcdc;
   -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.drawer-open {
+  overflow: hidden;
+}
+.drawer {
+  position: fixed;
+  left: -280px;
+  top: 0;
+  height: 100%;
+  width: 280px;
+  transition: all .3s ease;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  z-index: 1050;
+  visibility: hidden;
+}
+.drawer.active {
+  left: 0;
+  visibility: visible;
+}
+.drawer .drawer-dialog {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-right: 1px solid #999;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  overflow: auto;
+}
+.drawer[data-placement=right] {
+  left: auto;
+  right: -280px;
+}
+.drawer[data-placement=right].active {
+  left: auto;
+  right: 0;
+}
+.drawer[data-placement=right] .drawer-dialog {
+  border: 0 none;
+  border-left: 1px solid #999;
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+}
+.drawer .list-group {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+.drawer .list-group .list-group-item {
+  border-radius: 0;
+  border-right: 0 none;
+  border-left: 0 none;
+}
+.drawer .list-group .list-group-item:first-child {
+  border-top: 0 none;
+}
+.drawer .list-group .list-group-item:last-child {
+  border-bottom: 0 none;
+}
+.drawer-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1040;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s ease;
+  background: rgba(0, 0, 0, 0.5);
+}
+.drawer-backdrop.active {
+  visibility: visible;
+  opacity: 1;
+}
+.drawer-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+.drawer-header,
+.drawer-body,
+.drawer-footer {
+  padding: 15px;
+}
+.drawer-header {
+  border-bottom: 1px solid #e5e5e5;
+}
+.drawer-footer {
+  border-top: 1px solid #e5e5e5;
 }
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome

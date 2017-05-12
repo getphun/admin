@@ -15,8 +15,9 @@ class HomeController extends \AdminController
             return $this->loginFirst();
         
         $this->respond('home/index', [
-            'page_title' => $this->config->name,
-            'nav_title'  => $this->config->name
+            'page_title'  => $this->config->name,
+            'nav_title'   => $this->config->name,
+            'active_menu' => 'home'
         ]);
     }
 }
