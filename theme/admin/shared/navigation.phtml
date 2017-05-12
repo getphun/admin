@@ -1,0 +1,35 @@
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+    
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#admin-navigation" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            
+            <a class="navbar-brand" href="<?= $this->router->to('adminHome'); ?>"><?= $nav_title ?></a>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="admin-navigation">
+            
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="<?= $this->router->to('siteHome') ?>">Back to site</a></li>
+                <?php if($this->user->isLogin()): ?>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <?= $this->user->fullname ?>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?= $this->router->to('adminMeLogout') ?>">Logout</a></li>
+                    </ul>
+                </li>
+                <?php endif; ?>
+            </ul>
+            
+        </div>
+        
+    </div>
+</nav>

@@ -1,0 +1,26 @@
+<div class="form-group<?= ($error?' has-error':'') ?>">
+    <?php if(!isset($nolabel) || !$nolabel): ?>
+    <label for="<?= $id ?>"><?= $label ?></label>
+    <?php endif; ?>
+    <?php
+        $attrs = [
+            'type'          => $type,
+            'name'          => $name,
+            'placeholder'   => $label,
+            'class'         => 'form-control',
+            'id'            => $id
+        ];
+        if($type != 'password')
+            $attrs['value'] = $value;
+        
+        // let parse the rules to decide more attribute
+        foreach($rules as $rule => $args){
+            if($rule === 'required')
+                $attrs['required'] = 'required';
+        }
+    ?>
+    <input <?= array_to_attr($attrs) ?>>
+    <?php if(isset($desc) || $error): ?>
+    <p class="help-block"><?= ($error?$error:$desc) ?></p>
+    <?php endif; ?>
+</div>

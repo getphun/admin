@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><?= $page_title ?></title>
+    <?php if(is_dev()): ?>
+    <link rel="stylesheet" href="<?= $this->asset('css/style.css'); ?>">
+    <?php else: ?>
+    <link rel="stylesheet" href="<?= $this->asset('css/style.min.css'); ?>">
+    <?php endif; ?>
+    <?php if(isset($csses)): ?>
+        <?php foreach($csses as $css): ?>
+        <link rel="stylesheet" href="<?= $this->asset($css) ?>">
+        <?php endforeach; ?>
+    <?php endif; ?>
+</head>
+<body>
+    <?= $this->partial('shared/navigation'); ?>
