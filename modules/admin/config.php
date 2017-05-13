@@ -89,11 +89,6 @@ return [
             'install',
             'remove',
             'update'
-        ],
-        'theme/admin/widget/panel.phtml' => [
-            'install',
-            'remove',
-            'update'
         ]
     ],
     '__dependencies' => [
