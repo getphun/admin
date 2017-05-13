@@ -31,6 +31,8 @@ class Cani
     }
     
     public function __get($name){
+        if(\Phun::$dispatcher->user->id == 1)
+            return true;
         return in_array($name, $this->_perms);
     }
 }

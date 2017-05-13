@@ -8,7 +8,8 @@ CREATE TABLE IF NOT EXISTS `user_perms` (
 );
 
 INSERT IGNORE INTO `user_perms` ( `name`, `group`, `role`, `about` ) VALUES
-    ( 'read_admin', 'Admin', 'Admin', 'Allow user to open admin panel home' );
+    ( 'read_admin',     'Admin',    'Admin',        'Allow user to open admin panel home' ),
+    ( 'read_user',      'User',     'Management',   'Allow user to see exists users' );
 
 CREATE TABLE IF NOT EXISTS `user_perms_chain` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
