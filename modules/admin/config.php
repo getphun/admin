@@ -110,6 +110,7 @@ return [
             'AdminController' => 'modules/admin/controller/AdminController.php',
             'Admin\\Controller\\HomeController' => 'modules/admin/controller/HomeController.php',
             'Admin\\Controller\\MeController' => 'modules/admin/controller/MeController.php',
+            'Admin\\Controller\\UserController' => 'modules/admin/controller/UserController.php',
             'Admin\\Model\\UserPerms' => 'modules/admin/model/UserPerms.php',
             'Admin\\Model\\UserPermsChain' => 'modules/admin/model/UserPermsChain.php'
         ],
@@ -138,6 +139,10 @@ return [
             'adminMeLogout' => [
                 'rule' => '/logout',
                 'handler' => 'Admin\\Controller\\Me::logout'
+            ],
+            'adminUserFilter' => [
+                'rule' => '/user/filter',
+                'handler' => 'Admin\\Controller\\User::filter'
             ]
         ]
     ],
