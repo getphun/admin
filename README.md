@@ -19,6 +19,4 @@ return [
 
 ## TODO
 
-1. User Permissions
-1. Home Widget
 1. More Form Control

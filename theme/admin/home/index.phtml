@@ -1,3 +1,66 @@
 <?php $this->partial('shared/header'); ?>
 
+<div class="container">
+    
+    <?php if(isset($widgets['top'])): ?>
+    <div class="row">
+        <?php foreach($widgets['top'] as $wid): ?>
+        <div class="<?= (isset($wid['width'])?$wid['width']:'col-md-3') ?>" id="widget-<?= $wid['name'] ?>">
+            <?= $wid['html'] ?>
+        </div>
+        <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
+    
+    <div class="row">
+        
+        <div class="col-md-5">
+            <?php if(isset($widgets['middle-left'])): ?>
+            <div class="row">
+                <?php foreach($widgets['middle-left'] as $wid): ?>
+                <div class="<?= (isset($wid['width'])?$wid['width']:'col-md-12') ?>" id="widget-<?= $wid['name'] ?>">
+                    <?= $wid['html'] ?>
+                </div>
+                <?php endforeach; ?>
+            </div>
+            <?php endif; ?>
+        </div>
+        
+        <div class="col-md-4">
+            <?php if(isset($widgets['middle-center'])): ?>
+            <div class="row">
+                <?php foreach($widgets['middle-center'] as $wid): ?>
+                <div class="<?= (isset($wid['width'])?$wid['width']:'col-md-12') ?>" id="widget-<?= $wid['name'] ?>">
+                    <?= $wid['html'] ?>
+                </div>
+                <?php endforeach; ?>
+            </div>
+            <?php endif; ?>
+        </div>
+        
+        <div class="col-md-3">
+            <?php if(isset($widgets['middle-right'])): ?>
+            <div class="row">
+                <?php foreach($widgets['middle-right'] as $wid): ?>
+                <div class="<?= (isset($wid['width'])?$wid['width']:'col-md-12') ?>" id="widget-<?= $wid['name'] ?>">
+                    <?= $wid['html'] ?>
+                </div>
+                <?php endforeach; ?>
+            </div>
+            <?php endif; ?>
+        </div>
+    </div>
+    
+    <?php if(isset($widgets['bottom'])): ?>
+    <div class="row">
+        <?php foreach($widgets['bottom'] as $wid): ?>
+        <div class="<?= (isset($wid['width'])?$wid['width']:'col-md-3') ?>" id="widget-<?= $wid['name'] ?>">
+            <?= $wid['html'] ?>
+        </div>
+        <?php endforeach; ?>
+    </div>
+    <?php endif; ?>
+    
+</div>
+
 <?php $this->partial('shared/footer'); ?>

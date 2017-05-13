@@ -4447,6 +4447,21 @@ button.list-group-item-danger.active:focus {
 .panel-body {
   padding: 15px;
 }
+.panel-body > h1,
+.panel-body h2,
+.panel-body h3,
+.panel-body h4,
+.panel-body h5,
+.panel-body h6,
+.panel-body .h1,
+.panel-body .h2,
+.panel-body .h3,
+.panel-body .h4,
+.panel-body .h5,
+.panel-body .h6 {
+  padding: 0;
+  margin: 0;
+}
 .panel-heading {
   padding: 10px 15px;
   border-bottom: 1px solid transparent;

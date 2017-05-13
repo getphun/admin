@@ -7,10 +7,30 @@
  */
 
 namespace Admin\Service;
+use Admin\Model\UserPerms as UPerms;
+use Admin\Model\UserPermsChain as UPChain;
 
 class Cani
 {
+    private $_perms = [];
+    
+    public function __construct(){
+        $dis = &\Phun::$dispatcher;
+        
+        if(!$dis->user->isLogin())
+            return;
+        
+        $perms = UPChain::get(['user'=>$dis->user->id]);
+        if(!$perms)
+            return;
+        
+        $perms = array_column($perms, 'user_perms');
+        $perms = UPerms::get(['id' => $perms]);
+        if($perms)
+            $this->_perms = array_column($perms, 'name');
+    }
+    
     public function __get($name){
-        return true;
+        return in_array($name, $this->_perms);
     }
 }

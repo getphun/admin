@@ -50,12 +50,16 @@ class MeController extends \AdminController
             return $this->respond('me/login', $params);
         }
         
+        $this->fire('user:login', $this->user);
         $this->_onLoggedIn();
     }
     
     public function logoutAction(){
-        if($this->user->isLogin())
+        if($this->user->isLogin()){
+            $this->fire('user:logout', $this->user);
             $this->user->logout();
+        }
+        
         $this->_onLoggedOut();
     }
 }

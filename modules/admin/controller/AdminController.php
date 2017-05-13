@@ -137,6 +137,14 @@ class AdminController extends \Controller
         }
     }
     
+    public function fire(){
+        if(!module_exists('event'))
+            return;
+        
+        $args = func_get_args();
+        call_user_func_array([$this->event, 'fire'], $args);
+    }
+    
     public function loginFirst(){
         $next = $this->req->uri;
         $page = $this->router->to('adminLogin') . '?next=' . urlencode($next);
