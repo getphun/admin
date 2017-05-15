@@ -1,0 +1,41 @@
+<div class="form-group<?= ($error ? ' has-error' : '') ?>">
+    <?php if(!isset($nolabel) || !$nolabel): ?>
+    <label for="<?= $id ?>"><?= $label ?></label>
+    <?php endif; ?>
+    
+    <?php
+        $helper = $error ? $error : $desc;
+        if(!is_array($value))
+            $value = (array)$value;
+    ?>
+    
+    <div class="panel panel-default panel-form">
+        <div class="panel-body">
+            <?php foreach($options as $val => $lab): ?>
+            <div class="checkbox">
+                <?php
+                    $opt_attr = [
+                        'type'  => 'checkbox',
+                        'name'  => $name . '[]',
+                        'value' => $val,
+                        'id'    => sprintf('%s-%s', $id, $val),
+                        'class' => 'styled'
+                    ];
+                    
+                    if($helper)
+                        $opt_attr['aria-describedby'] = $id . '-help-block';
+                    
+                    if(in_array($val, $value))
+                        $opt_attr['checked'] = 'checked';
+                ?>
+                <input <?= array_to_attr($opt_attr); ?>>
+                <label for="<?= $opt_attr['id'] ?>"><?= $lab ?></label>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    
+    <?php if($helper): ?>
+    <span id="<?= $id ?>-help-block" class="help-block"><?= $helper ?></span>
+    <?php endif; ?>
+</div>

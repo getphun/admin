@@ -30,7 +30,8 @@ class HomeController extends \AdminController
             'widgets'     => [],
             'csses'       => [],
             'jses'        => [],
-            'parents'     => []
+            'parents'     => [],
+            'tags'        => []
         ];
         
         for($i=1; $i<25; $i++){
@@ -48,6 +49,10 @@ class HomeController extends \AdminController
             
             $params['parents'][] = $item;
         }
+        
+        for($i=1; $i<10; $i++)
+            $params['tags'][$i] = 'Item #' . $i;
+        
         $form = $this->form->validate();
         $this->respond('test', $params);
     }

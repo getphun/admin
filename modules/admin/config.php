@@ -16,6 +16,7 @@ return [
         'theme/admin/error/404.phtml'   => [ 'install', 'remove', 'update' ],
         
         'theme/admin/form/checkbox.phtml'           => [ 'install', 'remove', 'update' ],
+        'theme/admin/form/checkbox-multiple.phtml'  => [ 'install', 'remove', 'update' ],
         'theme/admin/form/checkbox-tree.phtml'      => [ 'install', 'remove', 'update' ],
         'theme/admin/form/color.phtml'              => [ 'install', 'remove', 'update' ],
         'theme/admin/form/email.phtml'              => [ 'install', 'remove', 'update' ],

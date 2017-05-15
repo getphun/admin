@@ -23,8 +23,6 @@ return [
     - Date
     - DateTime
     - File
-    - Multiple Parent
-    - Multiple
     - WYSIWYG
     - Multiple File
     
