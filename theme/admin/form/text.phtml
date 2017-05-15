@@ -1,0 +1,51 @@
+<div class="form-group<?= ($error?' has-error':'') ?>">
+    <?php if(!isset($nolabel) || !$nolabel): ?>
+    <label for="<?= $id ?>"><?= $label ?></label>
+    <?php endif; ?>
+    
+    <?php
+        $el_attrs = [
+            'type'  => $type,
+            'id'    => $id,
+            'name'  => $name,
+            'placeholder' => $label,
+            'class' => 'form-control'
+        ];
+        
+        // alnumdash
+        if(isset($rules['alnumdash']))
+            $el_attrs['pattern'] = '^[a-zA-Z0-9-]*$';
+        
+        // length
+        if(isset($rules['length'])){
+            if(isset($rules['length']['min']))
+                $el_attrs['minlength'] = $rules['length']['min'];
+            if(isset($rules['length']['max']))
+                $el_attrs['maxlength'] = $rules['length']['max'];
+        }
+        
+        // numeric
+        if(isset($rules['numeric'])){
+            if(isset($rules['numeric']['min']))
+                $el_attrs['min'] = $rules['numeric']['min'];
+            if(isset($rules['numeric']['max']))
+                $el_attrs['max'] = $rules['numeric']['max'];
+        }
+        
+        // regex
+        if(isset($rules['regex']))
+            $el_attrs['pattern'] = str_replace('!', '', $rules['regex']);
+        
+        // required
+        if(isset($rules['required']))
+            $el_attrs['required'] = 'required';
+        
+        $helper = $error ? $error : $desc;
+    ?>
+    
+    <input <?= array_to_attr($el_attrs); ?>>
+    
+    <?php if($helper): ?>
+    <span id="<?= $id ?>-help-block" class="help-block"><?= $helper ?></span>
+    <?php endif; ?>
+</div>

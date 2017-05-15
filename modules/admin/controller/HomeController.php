@@ -11,6 +11,26 @@ namespace Admin\Controller;
 class HomeController extends \AdminController
 {
     public function indexAction(){
+        $object = new \stdClass();
+        $object->featured = 1;
+        $object->religion = 'budha';
+        
+        $this->form->setForm('test');
+        $this->form->setObject($object);
+        
+        $params = [
+            'page_title'  => $this->config->name,
+            'nav_title'   => $this->config->name,
+            'active_menu' => 'home',
+            'widgets'     => [],
+            'csses'       => [],
+            'jses'        => []
+        ];
+        $form = $this->form->validate();
+        $this->respond('test', $params);
+    }
+    
+    public function sindexAction(){
         if(!$this->user->isLogin())
             return $this->loginFirst();
         if(!$this->can_i->read_admin)

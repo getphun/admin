@@ -1,0 +1,21 @@
+<div class="checkbox">
+    <?php
+        $el_attrs = [
+            'id'        => $id,
+            'title'     => $label,
+            'name'      => $name,
+            'type'      => 'checkbox',
+            'class'     => 'styled'
+        ];
+        if($value)
+            $el_attrs['checked'] = 'checked';
+        
+        if(isset($rules['required']))
+            $el_attrs['required'] = 'required';
+        
+        if($desc || $error)
+            $el_attrs['title'] = $error ? $error : $desc;
+    ?>
+    <input <?= array_to_attr($el_attrs); ?>>>
+    <label for="<?= $id ?>"><?= $label ?></label>
+</div>

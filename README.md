@@ -20,15 +20,13 @@ return [
 ## TODO
 
 1. More Form Control
-    - Checkbox
+    - Text
     - Date
     - DateTime
     - File
     - Multiple Parent
     - Multiple
-    - Radio
     - Select
-    - Text
     - Textarea
     - WYSIWYG
     - Multiple File

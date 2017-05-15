@@ -15,6 +15,10 @@ return [
         
         'theme/admin/error/404.phtml'   => [ 'install', 'remove', 'update' ],
         
+        'theme/admin/form/checkbox.phtml'   => [ 'install', 'remove', 'update' ],
+        'theme/admin/form/radio.phtml'      => [ 'install', 'remove', 'update' ],
+        'theme/admin/form/text.phtml'       => [ 'install', 'remove', 'update' ],
+        
         'theme/admin/home/index.phtml'  => [ 'install', 'remove', 'update' ],
         'theme/admin/me/login.phtml'    => [ 'install', 'remove', 'update' ],
         
