@@ -12,6 +12,9 @@
             'class' => 'form-control'
         ];
         
+        if($value && $type != 'password')
+            $el_attrs['value'] = $value;
+        
         // alnumdash
         if(isset($rules['alnumdash']))
             $el_attrs['pattern'] = '^[a-zA-Z0-9-]*$';
@@ -40,12 +43,35 @@
         if(isset($rules['required']))
             $el_attrs['required'] = 'required';
         
+        // options
+        if($options){
+            $el_attrs['list'] = $id . '-datalist';
+            $el_attrs['autocomplete'] = 'off';
+        }
+        
         $helper = $error ? $error : $desc;
+        if($helper)
+            $el_attrs['aria-describedby'] = $id . '-help-block';
     ?>
     
-    <input <?= array_to_attr($el_attrs); ?>>
+    <?php if(!isset($icon)): ?>
+        <input <?= array_to_attr($el_attrs); ?>>
+    <?php else: ?>
+    <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-<?= $icon ?>"></i></span>
+        <input <?= array_to_attr($el_attrs); ?>>
+    </div>
+    <?php endif; ?>
     
     <?php if($helper): ?>
     <span id="<?= $id ?>-help-block" class="help-block"><?= $helper ?></span>
+    <?php endif; ?>
+    
+    <?php if($options): ?>
+    <datalist id="<?= $id ?>-datalist">
+        <?php foreach($options as $val): ?>
+        <option value="<?= $val ?>"><?= $val ?></option>
+        <?php endforeach; ?>
+    </datalist>
     <?php endif; ?>
 </div>

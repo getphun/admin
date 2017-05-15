@@ -18,6 +18,10 @@
                         'value' => $val,
                         'id'    => sprintf('%s-%s', $id, $val)
                     ];
+                    
+                    if($helper)
+                        $opt_attr['aria-describedby'] = $id . '-help-block';
+                    
                     if($value == $val)
                         $opt_attr['checked'] = 'checked';
                 ?>

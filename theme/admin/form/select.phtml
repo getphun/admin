@@ -1,0 +1,33 @@
+<div class="form-group<?= ($error?' has-error':'') ?>">
+    <?php if(!isset($nolabel) || !$nolabel): ?>
+    <label for="<?= $id ?>"><?= $label ?></label>
+    <?php endif; ?>
+    
+    <?php
+        $el_attrs = [
+            'id'    => $id,
+            'name'  => $name,
+            'placeholder' => $label,
+            'class' => 'form-control'
+        ];
+        
+        // required
+        if(isset($rules['required']))
+            $el_attrs['required'] = 'required';
+        
+        $helper = $error ? $error : $desc;
+        if($helper)
+            $el_attrs['aria-describedby'] = $id . '-help-block';
+    ?>
+    
+    <select <?= array_to_attr($el_attrs); ?>>
+        <?php foreach($options as $val => $lab): ?>
+        <option value="<?= $val ?>"<?= ($value==$val?' selected="selected"':'') ?>><?= $lab ?></option>
+        <?php endforeach; ?>
+    </select>
+        
+    <?php if($helper): ?>
+    <span id="<?= $id ?>-help-block" class="help-block"><?= $helper ?></span>
+    <?php endif; ?>
+    
+</div>

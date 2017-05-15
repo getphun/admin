@@ -20,13 +20,15 @@ return [
 ## TODO
 
 1. More Form Control
-    - Text
     - Date
     - DateTime
     - File
     - Multiple Parent
     - Multiple
-    - Select
-    - Textarea
     - WYSIWYG
     - Multiple File
+    - Radio Parent
+    
+    - Select with Ajax
+    - Select Multiple
+    - Select Multiple With Ajax

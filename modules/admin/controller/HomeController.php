@@ -14,6 +14,10 @@ class HomeController extends \AdminController
         $object = new \stdClass();
         $object->featured = 1;
         $object->religion = 'budha';
+        $object->regional = 'Jakarta Utara';
+        $object->website = 'http://google.com/';
+        $object->status = 2;
+        $object->about = 'Is this the site?';
         
         $this->form->setForm('test');
         $this->form->setObject($object);
