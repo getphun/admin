@@ -49,6 +49,7 @@ return [
             'Admin\\Service\\Admin' => 'modules/admin/service/Admin.php',
             'Admin\\Service\\Cani' => 'modules/admin/service/Cani.php',
             'AdminController' => 'modules/admin/controller/AdminController.php',
+            'AdminWidget' => 'modules/admin/library/AdminWidget.php',
             'Admin\\Controller\\HomeController' => 'modules/admin/controller/HomeController.php',
             'Admin\\Controller\\MeController' => 'modules/admin/controller/MeController.php',
             'Admin\\Controller\\UserController' => 'modules/admin/controller/UserController.php',
