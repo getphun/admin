@@ -27,8 +27,5 @@ return [
     - Multiple
     - WYSIWYG
     - Multiple File
-    - Radio tree
     
     - Select with Ajax
-    - Select Multiple
-    - Select Multiple With Ajax

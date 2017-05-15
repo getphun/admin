@@ -18,6 +18,7 @@ class HomeController extends \AdminController
         $object->website = 'http://google.com/';
         $object->status = 2;
         $object->about = 'Is this the site?';
+        $object->category = [1,2,3];
         
         $this->form->setForm('test');
         $this->form->setObject($object);
