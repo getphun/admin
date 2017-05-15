@@ -20,8 +20,8 @@ module.exports = function(grunt) {
 //                         'js/affix.js',
                      
 //                         'js/moment.js',
-//                         'js/drawer.js',
-//                         'js/autofocus.js',
+                        'js/drawer.js',
+                        'js/autofocus.js',
 //                         'js/bootbox.js',
 //                         'js/btn-confirm.js',
 //                         'js/file-picker.js',
@@ -32,9 +32,8 @@ module.exports = function(grunt) {
 //                         'js/bootstrap-select-ajax.js',
 //                         'js/tinymce.js',
 //                         'js/bootstrap-datetimepicker.js',
-//                         'js/bootstrap-typeahead.js',
+//                         'js/bootstrap3-typeahead.js',
 //                         'js/Chart.js',
-                        'js/drawer.js',
                         'js/main.js'
                     ]
                 }

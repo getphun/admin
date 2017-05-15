@@ -11,93 +11,34 @@ return [
     '__version' => '0.0.1',
     '__git' => 'https://github.com/getphun/admin',
     '__files' => [
-        'modules/admin' => [
-            'install',
-            'remove',
-            'update'
-        ],
-        'theme/admin/error/404.phtml' => [
-            'install',
-            'remove',
-            'update'
-        ],
-        'theme/admin/form/password.phtml' => [
-            'install',
-            'remove',
-            'update'
-        ],
-        'theme/admin/form/text.phtml' => [
-            'install',
-            'remove',
-            'update'
-        ],
-        'theme/admin/home/index.phtml' => [
-            'install',
-            'remove',
-            'update'
-        ],
-        'theme/admin/me/login.phtml' => [
-            'install',
-            'remove',
-            'update'
-        ],
-        'theme/admin/shared/navigation.phtml' => [
-            'install',
-            'remove',
-            'update'
-        ],
-        'theme/admin/shared/header.phtml' => [
-            'install',
-            'remove',
-            'update'
-        ],
-        'theme/admin/shared/footer.phtml' => [
-            'install',
-            'remove',
-            'update'
-        ],
-        'theme/admin/static/css/style.css' => [
-            'install',
-            'remove',
-            'update'
-        ],
-        'theme/admin/static/css/style.min.css' => [
-            'install',
-            'remove',
-            'update'
-        ],
-        'theme/admin/static/fonts' => [
-            'install',
-            'remove',
-            'update'
-        ],
-        'theme/admin/static/image' => [
-            'install',
-            'remove'
-        ],
-        'theme/admin/static/js/jquery.min.js' => [
-            'install',
-            'remove',
-            'update'
-        ],
-        'theme/admin/static/js/portal.js' => [
-            'install',
-            'remove',
-            'update'
-        ],
-        'theme/admin/static/js/portal.min.js' => [
-            'install',
-            'remove',
-            'update'
-        ]
+        'modules/admin' => [ 'install', 'remove', 'update' ],
+        
+        'theme/admin/error/404.phtml'   => [ 'install', 'remove', 'update' ],
+        
+        'theme/admin/home/index.phtml'  => [ 'install', 'remove', 'update' ],
+        'theme/admin/me/login.phtml'    => [ 'install', 'remove', 'update' ],
+        
+        'theme/admin/shared/navigation.phtml'   => [ 'install', 'remove', 'update' ],
+        'theme/admin/shared/header.phtml'       => [ 'install', 'remove', 'update' ],
+        'theme/admin/shared/footer.phtml'       => [ 'install', 'remove', 'update' ],
+        
+        'theme/admin/static/css/style.css'      => [ 'install', 'remove', 'update' ],
+        'theme/admin/static/css/style.min.css'  => [ 'install', 'remove', 'update' ],
+        
+        'theme/admin/static/fonts' => [ 'install', 'remove', 'update' ],
+        'theme/admin/static/image' => [ 'install', 'remove' ],
+        
+        'theme/admin/static/js/jquery.min.js' => [ 'install', 'remove', 'update' ],
+        'theme/admin/static/js/portal.js' => [ 'install', 'remove', 'update' ],
+        'theme/admin/static/js/portal.min.js' => [ 'install', 'remove', 'update' ]
     ],
     '__dependencies' => [
         'user',
         'formatter',
         'form',
-        '\\event',
-        '\\upload',
-        '\\media'
+        '/event',
+        '/upload',
+        '/media'
     ],
     '_services' => [
         'admin' => 'Admin\\Service\\Admin',

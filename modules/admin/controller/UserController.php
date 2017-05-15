@@ -21,7 +21,7 @@ class UserController extends \AdminController
         if(!$q)
             return $this->ajax(['data'=>[]]);
         
-        $users = User::filter($q, 20);
+        $users = User::get(['q'=>$q], 20, false, 'LENGTH(fullname)');
         if(!$users)
             return $this->ajax(['data'=>[]]);
         
