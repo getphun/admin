@@ -11,19 +11,6 @@ namespace Admin\Controller;
 class HomeController extends \AdminController
 {
     public function indexAction(){
-        $this->form->setForm('test');
-        $params = [
-            'page_title'  => $this->config->name,
-            'nav_title'   => $this->config->name,
-            'active_menu' => 'home',
-            'widgets'     => [],
-            'csses'       => [],
-            'jses'        => []
-        ];
-        
-        return $this->respond('test', $params);
-    }
-    public function index2Action(){
         if(!$this->user->isLogin())
             return $this->loginFirst();
         if(!$this->can_i->read_admin)
