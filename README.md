@@ -25,5 +25,4 @@ return [
     - File
     - WYSIWYG
     - Multiple File
-    
-    - Select with Ajax
+    - Multiple Ajax

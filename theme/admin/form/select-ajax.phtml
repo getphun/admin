@@ -8,11 +8,11 @@
             'id'    => $id,
             'name'  => $name,
             'placeholder' => $label,
-            'class' => 'form-control'
+            'class' => 'form-control selectpicker',
+            'data-live-search-placeholder' => $label,
+            'data-live-search' => 'true',
+            'data-ajax' => $this->router->to($source)
         ];
-        
-        if(count($options) > 10)
-            $el_attrs['data-live-search'] = 'true';
         
         // required
         if(isset($rules['required']))
@@ -21,6 +21,8 @@
         $helper = $error ? $error : $desc;
         if($helper)
             $el_attrs['aria-describedby'] = $id . '-help-block';
+        if(!$options)
+            $options = [];
     ?>
     
     <select <?= array_to_attr($el_attrs); ?>>

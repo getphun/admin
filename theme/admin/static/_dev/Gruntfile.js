@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 //                         'js/autofill.js',
 //                         'js/bootstrap-tokenfield.js',
                         'js/bootstrap-select.js',
-//                         'js/bootstrap-select-ajax.js',
+                        'js/bootstrap-select-ajax.js',
 //                         'js/tinymce.js',
 //                         'js/bootstrap-datetimepicker.js',
                         'js/bootstrap3-typeahead.js',

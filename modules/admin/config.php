@@ -26,6 +26,7 @@ return [
         'theme/admin/form/radio-tree.phtml'         => [ 'install', 'remove', 'update' ],
         'theme/admin/form/search.phtml'             => [ 'install', 'remove', 'update' ],
         'theme/admin/form/select.phtml'             => [ 'install', 'remove', 'update' ],
+        'theme/admin/form/select-ajax.phtml'        => [ 'install', 'remove', 'update' ],
         'theme/admin/form/tel.phtml'                => [ 'install', 'remove', 'update' ],
         'theme/admin/form/text.phtml'               => [ 'install', 'remove', 'update' ],
         'theme/admin/form/textarea.phtml'           => [ 'install', 'remove', 'update' ],
