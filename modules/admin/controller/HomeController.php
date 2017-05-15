@@ -28,8 +28,25 @@ class HomeController extends \AdminController
             'active_menu' => 'home',
             'widgets'     => [],
             'csses'       => [],
-            'jses'        => []
+            'jses'        => [],
+            'parents'     => []
         ];
+        
+        for($i=1; $i<25; $i++){
+            $item = [
+                'id' => $i,
+                'name' => 'Item #' . $i,
+                'parent' => $i < 5 ? 0 : $i < 10 ? rand(1,5) : rand(5,10)
+            ];
+            if($i<5)
+                $item['parent'] = 0;
+            elseif($i<10)
+                $item['parent'] = rand(1,5);
+            else 
+                $item['parent'] = rand(5,10);
+            
+            $params['parents'][] = $item;
+        }
         $form = $this->form->validate();
         $this->respond('test', $params);
     }

@@ -21,6 +21,7 @@ return [
         'theme/admin/form/number.phtml'     => [ 'install', 'remove', 'update' ],
         'theme/admin/form/password.phtml'   => [ 'install', 'remove', 'update' ],
         'theme/admin/form/radio.phtml'      => [ 'install', 'remove', 'update' ],
+        'theme/admin/form/radio-tree.phtml' => [ 'install', 'remove', 'update' ],
         'theme/admin/form/search.phtml'     => [ 'install', 'remove', 'update' ],
         'theme/admin/form/select.phtml'     => [ 'install', 'remove', 'update' ],
         'theme/admin/form/tel.phtml'        => [ 'install', 'remove', 'update' ],
