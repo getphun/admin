@@ -4,12 +4,17 @@
     <?php endif; ?>
     
     <?php
+        // Due to Google Chrome and Opera has build-in date/datetime selector
+        // which is hard to configure, we've to use default 'text' input type
+        // to suppress the 'feature'.
+        // Thank you Google Chrome and Opera for your hard-work.
         $el_attrs = [
-            'type'  => $type,
+            'type'  => 'text',
+            'data-type' => $type,
             'id'    => $id,
             'name'  => $name,
             'placeholder' => $label,
-            'class' => 'form-control'
+            'class' => 'form-control form-date'
         ];
         
         if($value)

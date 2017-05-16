@@ -22,6 +22,7 @@ return [
         'theme/admin/form/date.phtml'               => [ 'install', 'remove', 'update' ],
         'theme/admin/form/datetime.phtml'           => [ 'install', 'remove', 'update' ],
         'theme/admin/form/email.phtml'              => [ 'install', 'remove', 'update' ],
+        'theme/admin/form/month.phtml'              => [ 'install', 'remove', 'update' ],
         'theme/admin/form/number.phtml'             => [ 'install', 'remove', 'update' ],
         'theme/admin/form/password.phtml'           => [ 'install', 'remove', 'update' ],
         'theme/admin/form/radio.phtml'              => [ 'install', 'remove', 'update' ],
@@ -32,6 +33,7 @@ return [
         'theme/admin/form/tel.phtml'                => [ 'install', 'remove', 'update' ],
         'theme/admin/form/text.phtml'               => [ 'install', 'remove', 'update' ],
         'theme/admin/form/textarea.phtml'           => [ 'install', 'remove', 'update' ],
+        'theme/admin/form/time.phtml'               => [ 'install', 'remove', 'update' ],
         'theme/admin/form/url.phtml'                => [ 'install', 'remove', 'update' ],
         
         'theme/admin/home/index.phtml'  => [ 'install', 'remove', 'update' ],

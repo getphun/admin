@@ -20,9 +20,9 @@ return [
 ## TODO
 
 1. More Form Control
-    - Date
-    - DateTime
     - File
     - WYSIWYG
     - Multiple File
     - Multiple Ajax
+    
+    - range

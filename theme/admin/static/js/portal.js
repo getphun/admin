@@ -10656,13 +10656,19 @@ $(function(){
     // datepicker
     // - date YYYY-MM-DD
     // - datetime YYYY-MM-DD HH:mm:ss
-    $('.form-control[type=date],.form-control[type=datetime]').each(function(i,e){
+    $('.form-control.form-date').each(function(i,e){
         var $this  = $(e);
         
         var format = 'YYYY-MM-DD HH:mm:ss';
-        switch($this.attr('type')){
+        switch($this.data('type')){
             case 'date':
                 format = 'YYYY-MM-DD';
+                break;
+            case 'month':
+                format = 'YYYY-MM';
+                break;
+            case 'time':
+                format = 'HH:mm:ss';
                 break;
         }
         
