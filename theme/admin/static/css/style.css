@@ -4453,6 +4453,21 @@ button.list-group-item-danger.active:focus {
   overflow: auto;
   height: 180px;
 }
+.panel.panel-form-list {
+  border: 0 none;
+}
+.panel.panel-form-list .panel-body {
+  padding: 0;
+}
+.panel.panel-form-list .list-group {
+  overflow: auto;
+  height: 148px;
+  border: 1px solid #ddd;
+  border-top: 0 none;
+}
+.panel.panel-form-list .list-group > li:first-child {
+  border-top: 0 none;
+}
 .panel-body {
   padding: 15px;
 }

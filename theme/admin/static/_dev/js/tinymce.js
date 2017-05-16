@@ -8,7 +8,7 @@ $(function(){
         toolbar: 'undo redo | styleselect | bold italic strikethrough | bullist numlist | table | link image media | pagebreak | fullscreen | code',
         plugins: 'link lists table image media pagebreak fullscreen code',
         height: 400,
-//         content_css: window.tMCE.cssContent,
+        content_css: window.tMCE.cssContent,
         
         // pagebreak
         pagebreak_separator: '<!-- PAGE BREAK -->',

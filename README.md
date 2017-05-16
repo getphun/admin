@@ -21,6 +21,4 @@ return [
 
 1. More Form Control
     - File
-    - WYSIWYG
     - Multiple File
-    - Multiple Ajax

@@ -33,6 +33,7 @@ module.exports = function(grunt) {
                         'js/tinymce.js',
                         'js/bootstrap-datetimepicker.js',
                         'js/bootstrap3-typeahead.js',
+                        'js/form-multiple-ajax.js',
 //                         'js/Chart.js',
                         'js/main.js'
                     ]

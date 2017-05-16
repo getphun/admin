@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="<?= $this->asset($css) ?>">
         <?php endforeach; ?>
     <?php endif; ?>
+    <script>window.tMCE = { cssContent: '<?= $this->asset('/css/tinymce.css') ?>' };</script>
 </head>
 <body>
     <?= $this->partial('shared/navigation'); ?>

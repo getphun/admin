@@ -20,6 +20,23 @@
         height: 180px;
     }
   }
+  
+  &.panel-form-list{
+    border: 0 none;
+    .panel-body{
+        padding: 0;
+    }
+    .list-group{
+        overflow: auto;
+        height: 148px;
+        border: 1px solid @panel-inner-border;
+        border-top: 0 none;
+        
+        > li:first-child{
+            border-top: 0 none;
+        }
+    }
+  }
 }
 
 // Panel contents

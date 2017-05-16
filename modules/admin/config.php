@@ -22,6 +22,7 @@ return [
         'theme/admin/form/date.phtml'               => [ 'install', 'remove', 'update' ],
         'theme/admin/form/datetime.phtml'           => [ 'install', 'remove', 'update' ],
         'theme/admin/form/email.phtml'              => [ 'install', 'remove', 'update' ],
+        'theme/admin/form/multiple-ajax.phtml'      => [ 'install', 'remove', 'update' ],
         'theme/admin/form/month.phtml'              => [ 'install', 'remove', 'update' ],
         'theme/admin/form/number.phtml'             => [ 'install', 'remove', 'update' ],
         'theme/admin/form/password.phtml'           => [ 'install', 'remove', 'update' ],
@@ -44,6 +45,7 @@ return [
         'theme/admin/shared/header.phtml'       => [ 'install', 'remove', 'update' ],
         'theme/admin/shared/footer.phtml'       => [ 'install', 'remove', 'update' ],
         
+        'theme/admin/static/css/tinymce.css'    => [ 'install', 'remove', 'update' ],
         'theme/admin/static/css/style.css'      => [ 'install', 'remove', 'update' ],
         'theme/admin/static/css/style.min.css'  => [ 'install', 'remove', 'update' ],
         

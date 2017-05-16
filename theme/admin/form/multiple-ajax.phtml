@@ -1,0 +1,41 @@
+<div class="form-group<?= ($error?' has-error':'') ?>">
+    <?php if(!isset($nolabel) || !$nolabel): ?>
+    <label for="<?= $id ?>"><?= $label ?></label>
+    <?php endif; ?>
+    
+    <?php
+        $helper = $error ? $error : $desc;
+    ?>
+    
+    <div class="panel panel-default panel-form-list">
+        <div class="panel-body">
+            <?php
+                $el_attrs = [
+                    'type'          => 'text',
+                    'class'         => 'form-control form-filter',
+                    'data-list'     => $id . '-list-object',
+                    'data-name'     => $name,
+                    'data-source'   => $this->router->to($source),
+                    'placeholder'   => $label,
+                    'id'            => $id,
+                    'autocomplete'  => 'off'
+                ];
+            ?>
+            <input <?= array_to_attr($el_attrs) ?>>
+        </div>
+        
+        <ul class="list-group" id="<?= $id ?>-list-object">
+            <?php foreach($options as $val => $lab): ?>
+            <li class="list-group-item">
+                <?= $lab ?>
+                <button type="button" class="close" aria-label="Close" onclick="multyAjaxRemove(this)"><span aria-hidden="true">&times;</span></button>
+                <input type="hidden" name="<?= $name ?>[]" value="<?= $val ?>">
+            </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+    
+    <?php if($helper): ?>
+    <span id="<?= $id ?>-help-block" class="help-block"><?= $helper ?></span>
+    <?php endif; ?>
+</div>

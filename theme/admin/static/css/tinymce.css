@@ -1,0 +1,41 @@
+body{
+    color: #333333;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    background-color: #fff;
+}
+
+table{
+    width:100%;
+}
+
+figure.image {
+    display: inline-block;
+    border: 1px solid #CCCCCC;
+    margin: 0 2px 0 1px;
+    background: #FFFFFF;
+    max-width: 100%;
+}
+
+figure.align-left {
+    float: left;
+}
+
+figure.align-right {
+    float: right;
+}
+
+figure.image img {
+    margin: 8px 8px 0 8px;
+    box-sizing: border-box;
+}
+
+figure.image figcaption {
+    margin: 6px 8px 6px 8px;
+    text-align: center;
+}
+
+img{
+    max-width: 100%;
+}
