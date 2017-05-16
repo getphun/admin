@@ -20,6 +20,7 @@ return [
         'theme/admin/form/checkbox-tree.phtml'      => [ 'install', 'remove', 'update' ],
         'theme/admin/form/color.phtml'              => [ 'install', 'remove', 'update' ],
         'theme/admin/form/date.phtml'               => [ 'install', 'remove', 'update' ],
+        'theme/admin/form/datetime.phtml'           => [ 'install', 'remove', 'update' ],
         'theme/admin/form/email.phtml'              => [ 'install', 'remove', 'update' ],
         'theme/admin/form/number.phtml'             => [ 'install', 'remove', 'update' ],
         'theme/admin/form/password.phtml'           => [ 'install', 'remove', 'update' ],
