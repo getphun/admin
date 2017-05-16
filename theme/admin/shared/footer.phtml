@@ -1,3 +1,23 @@
+    <?php if(module_exists('upload')): ?>
+    <div class="drawer" id="drawer-uploader" data-placement="right">
+        <div class="drawer-dialog">
+            <div class="drawer-body">
+                <div class="row">
+                    <div class="col-xs-9">
+                        <input type="search" class="form-control" placeholder="Find file">
+                    </div>
+                    <div class="col-xs-3 drawer-uploader-button">
+                        <input type="file" id="drawer-upload-button" title="Upload new file">
+                        <button class="btn btn-default"><i class="fa fa-upload" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+                <hr>
+                <div id="drawer-upload-search-result"></div>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
+
     <?php if(is_dev()): ?>
     <script src="<?= $this->asset('/js/jquery.min.js') ?>"></script>
     <script src="<?= $this->asset('/js/tinymce/tinymce.js') ?>"></script>

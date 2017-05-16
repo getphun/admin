@@ -22,6 +22,7 @@ return [
         'theme/admin/form/date.phtml'               => [ 'install', 'remove', 'update' ],
         'theme/admin/form/datetime.phtml'           => [ 'install', 'remove', 'update' ],
         'theme/admin/form/email.phtml'              => [ 'install', 'remove', 'update' ],
+        'theme/admin/form/file.phtml'               => [ 'install', 'remove', 'update' ],
         'theme/admin/form/multiple-ajax.phtml'      => [ 'install', 'remove', 'update' ],
         'theme/admin/form/month.phtml'              => [ 'install', 'remove', 'update' ],
         'theme/admin/form/number.phtml'             => [ 'install', 'remove', 'update' ],
@@ -78,6 +79,7 @@ return [
             'Admin\\Controller\\HomeController' => 'modules/admin/controller/HomeController.php',
             'Admin\\Controller\\MeController' => 'modules/admin/controller/MeController.php',
             'Admin\\Controller\\UserController' => 'modules/admin/controller/UserController.php',
+            'Admin\\Controller\\MediaController' => 'modules/admin/controller/MediaController.php',
             'Admin\\Model\\UserPerms' => 'modules/admin/model/UserPerms.php',
             'Admin\\Model\\UserPermsChain' => 'modules/admin/model/UserPermsChain.php'
         ],
@@ -110,6 +112,12 @@ return [
             'adminUserFilter' => [
                 'rule' => '/user/filter',
                 'handler' => 'Admin\\Controller\\User::filter'
+            ]
+        ],
+        'site' => [
+            'siteMediaFilter' => [
+                'rule' => '/comp/media/filter',
+                'handler' => 'Admin\\Controller\\Media::filter'
             ]
         ]
     ],

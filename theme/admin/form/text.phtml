@@ -58,7 +58,7 @@
         <input <?= array_to_attr($el_attrs); ?>>
     <?php else: ?>
     <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-<?= $icon ?>"></i></span>
+        <span class="input-group-addon"><i class="fa fa-<?= $icon ?>" aria-hidden="true"></i></span>
         <input <?= array_to_attr($el_attrs); ?>>
     </div>
     <?php endif; ?>

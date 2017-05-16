@@ -22,7 +22,7 @@ module.exports = function(grunt) {
                         'js/moment.js',
                         'js/drawer.js',
                         'js/autofocus.js',
-//                         'js/bootbox.js',
+                        'js/bootbox.js',
 //                         'js/btn-confirm.js',
 //                         'js/file-picker.js',
 //                         'js/data-filler.js',
@@ -30,10 +30,12 @@ module.exports = function(grunt) {
 //                         'js/bootstrap-tokenfield.js',
                         'js/bootstrap-select.js',
                         'js/bootstrap-select-ajax.js',
+                        'js/file-uploader.js',
                         'js/tinymce.js',
                         'js/bootstrap-datetimepicker.js',
                         'js/bootstrap3-typeahead.js',
                         'js/form-multiple-ajax.js',
+                        'js/form-file.js',
 //                         'js/Chart.js',
                         'js/main.js'
                     ]

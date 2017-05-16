@@ -1,0 +1,52 @@
+<div class="form-group<?= ($error?' has-error':'') ?>">
+    <?php if(!isset($nolabel) || !$nolabel): ?>
+    <label for="<?= $id ?>"><?= $label ?></label>
+    <?php endif; ?>
+    
+    <?php
+        $el_attrs = [
+            'type'  => 'text',
+            'id'    => $id,
+            'name'  => $name,
+            'placeholder' => $label,
+            'class' => 'form-control'
+        ];
+        
+        if($value)
+            $el_attrs['value'] = $value;
+        
+        // required
+        if(isset($rules['required']))
+            $el_attrs['required'] = 'required';
+        
+        // file
+        if(isset($rules['file']))
+            $el_attrs['data-accept'] = $rules['file'];
+        
+        $el_attrs['data-form'] = $this->form->getForm() . '.' . $name;
+        
+        $helper = $error ? $error : $desc;
+        if($helper)
+            $el_attrs['aria-describedby'] = $id . '-help-block';
+    ?>
+    
+    <?php if(module_exists('upload')): ?>
+        <div class="input-group">
+            <input <?= array_to_attr($el_attrs); ?>>
+            <div class="input-group-btn">
+                <button class="btn btn-default file-picker" type="button" data-input="<?= $id ?>">
+                    <i class="fa fa-folder-open" aria-hidden="true"></i>
+                </button>
+                <button class="btn btn-default file-previewer" type="button" data-input="<?= $id ?>">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+        
+        <?php if($helper): ?>
+        <span id="<?= $id ?>-help-block" class="help-block"><?= $helper ?></span>
+        <?php endif; ?>
+    <?php else: ?>
+        <div class="alert alert-danger">File upload require module <code>upload</code> to be installed</div>
+    <?php endif; ?>
+</div>
