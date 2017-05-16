@@ -1,0 +1,28 @@
+<div class="form-group<?= ($error?' has-error':'') ?>">
+    <?php if(!isset($nolabel) || !$nolabel): ?>
+    <label for="<?= $id ?>"><?= $label ?></label>
+    <?php endif; ?>
+    
+    <?php
+        $el_attrs = [
+            'id'    => $id,
+            'name'  => $name,
+            'placeholder' => $label,
+            'class' => 'form-control tinymce'
+        ];
+        
+        // required
+        if(isset($rules['required']))
+            $el_attrs['required'] = 'required';
+        
+        $helper = $error ? $error : $desc;
+        if($helper)
+            $el_attrs['aria-describedby'] = $id . '-help-block';
+    ?>
+    
+    <textarea <?= array_to_attr($el_attrs); ?>><?= $value ?></textarea>
+    
+    <?php if($helper): ?>
+    <span id="<?= $id ?>-help-block" class="help-block"><?= $helper ?></span>
+    <?php endif; ?>
+</div>

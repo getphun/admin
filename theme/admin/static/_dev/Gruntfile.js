@@ -30,7 +30,7 @@ module.exports = function(grunt) {
 //                         'js/bootstrap-tokenfield.js',
                         'js/bootstrap-select.js',
                         'js/bootstrap-select-ajax.js',
-//                         'js/tinymce.js',
+                        'js/tinymce.js',
                         'js/bootstrap-datetimepicker.js',
                         'js/bootstrap3-typeahead.js',
 //                         'js/Chart.js',

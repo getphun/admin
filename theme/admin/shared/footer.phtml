@@ -1,8 +1,10 @@
     <?php if(is_dev()): ?>
     <script src="<?= $this->asset('/js/jquery.min.js') ?>"></script>
+    <script src="<?= $this->asset('/js/tinymce/tinymce.js') ?>"></script>
     <script src="<?= $this->asset('/js/portal.js') ?>"></script>
     <?php else: ?>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="<?= $this->asset('/js/tinymce/tinymce.min.js') ?>"></script>
     <script src="<?= $this->asset('/js/portal.min.js') ?>"></script>
     <?php endif; ?>
     <?php if(isset($jses)): ?>

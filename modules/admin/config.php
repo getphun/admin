@@ -35,6 +35,7 @@ return [
         'theme/admin/form/textarea.phtml'           => [ 'install', 'remove', 'update' ],
         'theme/admin/form/time.phtml'               => [ 'install', 'remove', 'update' ],
         'theme/admin/form/url.phtml'                => [ 'install', 'remove', 'update' ],
+        'theme/admin/form/wysiwyg.phtml'            => [ 'install', 'remove', 'update' ],
         
         'theme/admin/home/index.phtml'  => [ 'install', 'remove', 'update' ],
         'theme/admin/me/login.phtml'    => [ 'install', 'remove', 'update' ],
@@ -49,6 +50,7 @@ return [
         'theme/admin/static/fonts' => [ 'install', 'remove', 'update' ],
         'theme/admin/static/image' => [ 'install', 'remove' ],
         
+        'theme/admin/static/js/tinymce' => [ 'install', 'remove', 'update' ],
         'theme/admin/static/js/jquery.min.js' => [ 'install', 'remove', 'update' ],
         'theme/admin/static/js/portal.js' => [ 'install', 'remove', 'update' ],
         'theme/admin/static/js/portal.min.js' => [ 'install', 'remove', 'update' ]
