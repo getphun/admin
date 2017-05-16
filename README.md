@@ -24,5 +24,3 @@ return [
     - WYSIWYG
     - Multiple File
     - Multiple Ajax
-    
-    - range
