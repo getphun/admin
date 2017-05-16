@@ -22,6 +22,32 @@ $(function(){
         $this.selectpicker();
     });
     
+    // datepicker
+    // - date YYYY-MM-DD
+    // - datetime YYYY-MM-DD HH:mm:ss
+    $('.form-control[type=date],.form-control[type=datetime]').each(function(i,e){
+        var $this  = $(e);
+        
+        var format = 'YYYY-MM-DD HH:mm:ss';
+        switch($this.attr('type')){
+            case 'date':
+                format = 'YYYY-MM-DD';
+                break;
+        }
+        
+        $(e).parent().datetimepicker({
+            format: format,
+            icons: {
+                time: 'fa fa-clock-o',
+                date: 'fa fa-calendar',
+                up  : 'fa fa-arrow-up',
+                down: 'fa fa-arrow-down',
+                previous: 'fa fa-arrow-left',
+                next: 'fa fa-arrow-right'
+            }
+        });
+    });
+    
     // typeahead from datalist
     $('.form-control[list]').each(function(i,e){
         var $this = $(e);

@@ -19,7 +19,7 @@ module.exports = function(grunt) {
                         'js/tab.js',
 //                         'js/affix.js',
                      
-//                         'js/moment.js',
+                        'js/moment.js',
                         'js/drawer.js',
                         'js/autofocus.js',
 //                         'js/bootbox.js',
@@ -31,7 +31,7 @@ module.exports = function(grunt) {
                         'js/bootstrap-select.js',
                         'js/bootstrap-select-ajax.js',
 //                         'js/tinymce.js',
-//                         'js/bootstrap-datetimepicker.js',
+                        'js/bootstrap-datetimepicker.js',
                         'js/bootstrap3-typeahead.js',
 //                         'js/Chart.js',
                         'js/main.js'

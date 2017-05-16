@@ -1,0 +1,37 @@
+<div class="form-group<?= ($error?' has-error':'') ?>">
+    <?php if(!isset($nolabel) || !$nolabel): ?>
+    <label for="<?= $id ?>"><?= $label ?></label>
+    <?php endif; ?>
+    
+    <?php
+        $el_attrs = [
+            'type'  => $type,
+            'id'    => $id,
+            'name'  => $name,
+            'placeholder' => $label,
+            'class' => 'form-control'
+        ];
+        
+        if($value)
+            $el_attrs['value'] = $value;
+        
+        // required
+        if(isset($rules['required']))
+            $el_attrs['required'] = 'required';
+        
+        $helper = $error ? $error : $desc;
+        if($helper)
+            $el_attrs['aria-describedby'] = $id . '-help-block';
+    ?>
+    
+    <div class="input-group date">
+        <input <?= array_to_attr($el_attrs); ?>>
+        <span class="input-group-addon">
+            <i class="fa fa-calendar"></i>
+        </span>
+    </div>
+    
+    <?php if($helper): ?>
+    <span id="<?= $id ?>-help-block" class="help-block"><?= $helper ?></span>
+    <?php endif; ?>
+</div>
