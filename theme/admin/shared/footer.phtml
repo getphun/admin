@@ -1,18 +1,27 @@
     <?php if(module_exists('upload')): ?>
-    <div class="drawer" id="drawer-uploader" data-placement="right">
+    <div class="drawer" id="drawer-media" data-placement="right">
         <div class="drawer-dialog">
             <div class="drawer-body">
                 <div class="row">
                     <div class="col-xs-9">
-                        <input type="search" class="form-control" placeholder="Find file">
+                        <input type="search" class="form-control" placeholder="Find file" id="drawer-media-filter">
                     </div>
-                    <div class="col-xs-3 drawer-uploader-button">
-                        <input type="file" id="drawer-upload-button" title="Upload new file">
+                    <div class="col-xs-3 drawer-media-button">
+                        <input type="file" id="drawer-media-upload" title="Upload new file">
                         <button class="btn btn-default"><i class="fa fa-upload" aria-hidden="true"></i></button>
                     </div>
                 </div>
                 <hr>
-                <div id="drawer-upload-search-result"></div>
+                
+                <div class="progress" id="drawer-media-loading">
+                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                        <span></span>
+                    </div>
+                </div>
+                
+                <div id="drawer-media-search-result">
+                    
+                </div>
             </div>
         </div>
     </div>

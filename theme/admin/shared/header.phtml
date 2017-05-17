@@ -15,7 +15,12 @@
         <link rel="stylesheet" href="<?= $this->asset($css) ?>">
         <?php endforeach; ?>
     <?php endif; ?>
-    <script>window.tMCE = { cssContent: '<?= $this->asset('/css/tinymce.css') ?>' };</script>
+    <script>
+        window.tMCE = { cssContent: '<?= $this->asset('/css/tinymce.css') ?>' };
+        <?php if(module_exists('upload')): ?>
+        window.tMedia = { filter: '<?= $this->router->to("siteMediaFilter"); ?>', upload: '<?= $this->router->to("fileUpload"); ?>' };
+        <?php endif; ?>
+    </script>
 </head>
 <body>
     <?= $this->partial('shared/navigation'); ?>

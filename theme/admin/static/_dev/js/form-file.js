@@ -17,9 +17,8 @@ $(function(){
         ext = ext[ext.length-1];
         
         // image
-        if(~['jpg', 'png', 'bmp', 'jpeg'].indexOf(ext.toLowerCase())){
-            msg = '<img src="' + value + '" style="max-width:100%">';
-        }
+        if(~['jpg', 'png', 'bmp', 'jpeg'].indexOf(ext.toLowerCase()))
+            msg = '<div class="text-center"><img src="' + value + '" style="max-width:100%"></div>';
         
         bootbox.alert({
             title: input.attr('placeholder'),
@@ -31,10 +30,10 @@ $(function(){
     $('.file-picker').click(function(){
         var input = $('#' + $(this).data('input'));
         
-        pickFile({
+        Media.pick({
             form: input.data('form'),
             mime: input.data('accept')
-        }, function(result){
+        }, function(file){
             input.val(file);
         });
     });

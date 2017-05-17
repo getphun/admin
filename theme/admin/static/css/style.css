@@ -5278,10 +5278,10 @@ input[type="radio"] .styled:checked + label::after {
 /* @import "tooltip.less"; */
 /* @import "popovers.less"; */
 /* @import "carousel.less"; */
-.drawer-upload-button {
+.drawer-media-button {
   position: relative;
 }
-#drawer-upload-button {
+#drawer-media-upload {
   border: 0 none;
   position: absolute;
   top: 0;
@@ -5289,6 +5289,9 @@ input[type="radio"] .styled:checked + label::after {
   width: 39px;
   height: 34px;
   opacity: 0;
+  cursor: pointer;
+}
+.clickable {
   cursor: pointer;
 }
 select.bs-select-hidden,
