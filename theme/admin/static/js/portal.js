@@ -1,4 +1,29 @@
 function noop(){}
+
+function previewImage(value, title){
+    if(!value){
+        return bootbox.alert({
+            title: 'Whoops',
+            message: 'No file/image to view. Please select file first.',
+            size: 'small',
+            backdrop: true
+        });
+    }
+        
+    msg = 'Unable to get file preview';
+    ext = value.split('.');
+    ext = ext[ext.length-1];
+    
+    // image
+    if(~['jpg', 'png', 'bmp', 'jpeg'].indexOf(ext.toLowerCase()))
+        msg = '<div class="text-center"><img src="' + value + '" style="max-width:100%"></div>';
+    
+    bootbox.alert({
+        title: title,
+        message: msg,
+        backdrop: true
+    });
+}
 /* ========================================================================
  * Bootstrap: transition.js v3.3.7
  * http://getbootstrap.com/javascript/#transitions
@@ -8424,8 +8449,13 @@ window.Media = {
     },
     
     loader: function(text){
-        if(text === false)
-            return Media.el.loading.fadeOut();
+        if(text === false){
+            return Media.el.loading.fadeOut(function(){
+                Media.el.lisResult.removeClass('loading');
+            });
+        }
+        
+        Media.el.lisResult.addClass('loading');
         Media.el.loading.find('span').html(text);
         Media.el.loading.fadeIn();
     },
@@ -8508,8 +8538,8 @@ window.Media = {
                     if(err)
                         return bootbox.alert({title: 'Error', message: err});
                     
-                    Media.el.drawer.drawer('hide');
                     Media._cb(data.path);
+                    Media.el.drawer.drawer('hide');
                 });
             });
         },
@@ -11900,29 +11930,7 @@ $(function(){
     $('.file-previewer').click(function(){
         var input = $('#' + $(this).data('input'));
         var value = input.val().trim();
-        
-        if(!value){
-            return bootbox.alert({
-                title: 'Whoops',
-                message: 'No file/image to view. Please select file first.',
-                size: 'small',
-                backdrop: true
-            });
-        }
-        
-        msg = 'Unable to get file preview';
-        ext = value.split('.');
-        ext = ext[ext.length-1];
-        
-        // image
-        if(~['jpg', 'png', 'bmp', 'jpeg'].indexOf(ext.toLowerCase()))
-            msg = '<div class="text-center"><img src="' + value + '" style="max-width:100%"></div>';
-        
-        bootbox.alert({
-            title: input.attr('placeholder'),
-            message: msg,
-            backdrop: true
-        });
+        previewImage(value, input.attr('placeholder'));
     });
     
     $('.file-picker').click(function(){
@@ -11936,6 +11944,37 @@ $(function(){
         });
     });
 });
+window.MMedia = {
+    remove: function(el){
+        $(el).parent().slideUp(function(){
+            $(this).remove();
+        });
+    },
+    
+    init: function(){
+        $('.multiple-file-pick').click(function(){
+            var $this = $(this);
+            
+            Media.pick({
+                form: $this.data('form'),
+                mime: $this.data('accept')
+            }, function(file){
+                if(!file)
+                    return;
+                
+                var thu = $('<div class="thumbnail" style="display:none"></div>');
+                thu.append('<button type="button" onclick="MMedia.remove(this)" class="btn btn-xs btn-danger btn-close" title="Delete"><span aria-hidden="true">&times;</span></button>');
+                thu.append('<img src="' + file + '" alt="#" onclick="previewImage(this.src, \'' + $this.data('label') + '\')">');
+                thu.append('<input type="hidden" name="' + $this.data('name') + '[]" value="' + file + '">');
+                
+                $('#'+$this.data('list')).prepend(thu);
+                thu.slideDown();
+            });
+        });
+    }
+}
+
+MMedia.init();
 $(function(){
     
     // bootstrap select mobile support

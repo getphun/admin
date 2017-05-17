@@ -21,6 +21,35 @@
     }
   }
   
+  &.panel-multiple-file{
+    margin-bottom: 0;
+    position: relative;
+    
+    .btn-append{
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        z-index: 100;
+    }
+        
+    .panel-body{
+        padding-bottom: 0;
+        overflow: auto;
+        height: 254px;
+        
+        .thumbnail{
+            cursor: pointer;
+            position: relative;
+            
+            .btn-close{
+                position: absolute;
+                right: 10px;
+                top: 10px;
+            }
+        }
+    }
+  }
+  
   &.panel-form-list{
     border: 0 none;
     .panel-body{

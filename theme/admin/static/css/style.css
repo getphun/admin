@@ -4065,6 +4065,7 @@ a.thumbnail.active {
 .thumbnail .caption {
   padding: 9px;
   color: #333333;
+  word-wrap: break-word;
 }
 .alert {
   padding: 15px;
@@ -4452,6 +4453,30 @@ button.list-group-item-danger.active:focus {
   padding-bottom: 0;
   overflow: auto;
   height: 180px;
+}
+.panel.panel-multiple-file {
+  margin-bottom: 0;
+  position: relative;
+}
+.panel.panel-multiple-file .btn-append {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  z-index: 100;
+}
+.panel.panel-multiple-file .panel-body {
+  padding-bottom: 0;
+  overflow: auto;
+  height: 254px;
+}
+.panel.panel-multiple-file .panel-body .thumbnail {
+  cursor: pointer;
+  position: relative;
+}
+.panel.panel-multiple-file .panel-body .thumbnail .btn-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 .panel.panel-form-list {
   border: 0 none;
@@ -5293,6 +5318,13 @@ input[type="radio"] .styled:checked + label::after {
 }
 .clickable {
   cursor: pointer;
+}
+#drawer-media-search-result {
+  height: calc( 100vh - 110px );
+  overflow-y: auto;
+}
+#drawer-media-search-result.loading {
+  height: calc( 100vh - 150px );
 }
 select.bs-select-hidden,
 select.selectpicker {

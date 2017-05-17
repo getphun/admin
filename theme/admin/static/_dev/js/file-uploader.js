@@ -32,8 +32,13 @@ window.Media = {
     },
     
     loader: function(text){
-        if(text === false)
-            return Media.el.loading.fadeOut();
+        if(text === false){
+            return Media.el.loading.fadeOut(function(){
+                Media.el.lisResult.removeClass('loading');
+            });
+        }
+        
+        Media.el.lisResult.addClass('loading');
         Media.el.loading.find('span').html(text);
         Media.el.loading.fadeIn();
     },

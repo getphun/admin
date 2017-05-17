@@ -19,6 +19,7 @@ class HomeController extends \AdminController
         $object->status = 2;
         $object->about = 'Is this the site?';
         $object->category = [1,2,3];
+        $object->preview = [];
         
         $this->form->setForm('test');
         $this->form->setObject($object);

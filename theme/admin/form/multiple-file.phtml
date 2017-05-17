@@ -1,0 +1,50 @@
+<div class="form-group<?= ($error?' has-error':'') ?>">
+    <?php if(!isset($nolabel) || !$nolabel): ?>
+    <label for="<?= $id ?>"><?= $label ?></label>
+    <?php endif; ?>
+    
+    <?php
+        
+        $helper = $error ? $error : $desc;
+        if($helper)
+            $el_attrs['aria-describedby'] = $id . '-help-block';
+        if(!is_array($value))
+            $value = (array)$value;
+        
+        $btn_attrs = [
+            'class' => 'btn btn-default btn-append multiple-file-pick',
+            'title' => 'Add new media',
+            'data-form' => $form . '.' . $name,
+            'data-list' => $id . '-list',
+            'data-name' => $name,
+            'data-label'=> $label,
+            'type'  => 'button',
+        ];
+        
+        if(isset($rules['file']))
+            $btn_attrs['data-accept'] = $rules['file'];
+    ?>
+    
+    <div class="panel panel-default panel-multiple-file">
+        <button <?= array_to_attr($btn_attrs) ?>>
+            <i class="fa fa-plus" aria-hidden="true"></i>
+        </button>
+            
+        <div class="panel-body" id="<?= $id ?>-list">
+            
+            <?php if($value): ?>
+                <?php foreach($value as $val): ?>
+                <div class="thumbnail">
+                    <button type="button" onclick="MMedia.remove(this)" class="btn btn-xs btn-danger btn-close" title="Delete"><span aria-hidden="true">&times;</span></button>
+                    <img src="<?= $val ?>" alt="#" onclick="previewImage(this.src, '<?= $label ?>')">
+                    <input type="hidden" name="<?= $name ?>[]" value="<?= $val ?>">
+                </div>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+    </div>
+    
+    <?php if($helper): ?>
+    <span id="<?= $id ?>-help-block" class="help-block"><?= $helper ?></span>
+    <?php endif; ?>
+</div>

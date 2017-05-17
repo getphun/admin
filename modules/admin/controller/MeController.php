@@ -7,15 +7,24 @@
  */
 
 namespace Admin\Controller;
+use Admin\Model\UserPerms as UPerms;
+use Admin\Model\UserPermsChain as UPChain;
 
 class MeController extends \AdminController
 {
     private function _onLoggedIn(){
         $next = $this->req->getQuery('next');
         if(!$next){
-            // TODO
-            // check user permission if they can see admin home 
-            $next = $this->router->to('siteHome');
+            $admin_perms = UPerms::get(['name'=>'read_admin'],1);
+            
+            if($admin_perms){
+                $allowed = UPChain::get(['user'=>$this->user->id, 'user_perms'=>$admin_perms->id],1);
+                if($allowed)
+                    $next = $this->router->to('adminHome');
+            }
+            
+            if(!$next)
+                $next = $this->router->to('siteHome');
         }
         
         $this->res->redirect($next);

@@ -12,3 +12,12 @@
 }
 
 .clickable{ cursor: pointer; }
+
+#drawer-media-search-result{
+    height: ~'calc( 100vh - 110px )';
+    overflow-y: auto;
+    
+    &.loading{
+        height: ~'calc( 100vh - 150px )';
+    }
+}
