@@ -19,5 +19,5 @@ return [
 
 ## TODO
 
-1. More Form Control
-    - Multiple File
+1. More Home Widgets
+    - Charts

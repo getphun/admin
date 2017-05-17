@@ -11,54 +11,6 @@ namespace Admin\Controller;
 class HomeController extends \AdminController
 {
     public function indexAction(){
-        $object = new \stdClass();
-        $object->featured = 1;
-        $object->religion = 'budha';
-        $object->regional = 'Jakarta Utara';
-        $object->website = 'http://google.com/';
-        $object->status = 2;
-        $object->about = 'Is this the site?';
-        $object->category = [1,2,3];
-        $object->preview = [];
-        
-        $this->form->setForm('test');
-        $this->form->setObject($object);
-        
-        $params = [
-            'page_title'  => $this->config->name,
-            'nav_title'   => $this->config->name,
-            'active_menu' => 'home',
-            'widgets'     => [],
-            'csses'       => [],
-            'jses'        => [],
-            'parents'     => [],
-            'tags'        => []
-        ];
-        
-        for($i=1; $i<25; $i++){
-            $item = [
-                'id' => $i,
-                'name' => 'Item #' . $i,
-                'parent' => $i < 5 ? 0 : $i < 10 ? rand(1,5) : rand(5,10)
-            ];
-            if($i<5)
-                $item['parent'] = 0;
-            elseif($i<10)
-                $item['parent'] = rand(1,5);
-            else 
-                $item['parent'] = rand(5,10);
-            
-            $params['parents'][] = $item;
-        }
-        
-        for($i=1; $i<10; $i++)
-            $params['tags'][$i] = 'Item #' . $i;
-        
-        $form = $this->form->validate();
-        $this->respond('test', $params);
-    }
-    
-    public function sindexAction(){
         if(!$this->user->isLogin())
             return $this->loginFirst();
         if(!$this->can_i->read_admin)
