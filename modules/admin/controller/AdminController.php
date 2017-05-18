@@ -153,6 +153,9 @@ class AdminController extends \Controller
     }
     
     public function respond($view, $params=[], $cache=null){
+        if(!isset($params['page_title']))
+            $params['page_title'] = $params['title'] ?? 'No title provided';
+        
         $this->adminMenu($params);
         
         parent::respond($view, $params, $cache);
