@@ -153,8 +153,7 @@ class AdminController extends \Controller
     }
     
     public function respond($view, $params=[], $cache=null){
-        if(!isset($params['page_title']))
-            $params['page_title'] = $params['title'] ?? 'No title provided';
+        $params['page_title'] = $params['title'] . ' - ' . $this->config->name;
         
         $this->adminMenu($params);
         
