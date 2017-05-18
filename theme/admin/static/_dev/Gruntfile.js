@@ -23,7 +23,7 @@ module.exports = function(grunt) {
                         'js/drawer.js',
                         'js/autofocus.js',
                         'js/bootbox.js',
-//                         'js/btn-confirm.js',
+                        'js/btn-confirm.js',
 //                         'js/file-picker.js',
 //                         'js/data-filler.js',
 //                         'js/autofill.js',
