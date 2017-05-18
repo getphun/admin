@@ -1,0 +1,9 @@
+<nav aria-label="Page navigation" class="text-right">
+    <ul class="pagination">
+        <?php foreach($pagination as $label => $link): ?>
+        <li<?= ($link=='#'?' class="'.(is_numeric($label)?'active':'disabled').'"':'') ?>>
+            <a href="<?= $link ?>"<?= ($link=='#'?' onclick="return false"':'') ?>><?= $label ?></a>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+</nav>

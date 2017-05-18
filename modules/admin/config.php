@@ -46,6 +46,7 @@ return [
         'theme/admin/shared/navigation.phtml'   => [ 'install', 'remove', 'update' ],
         'theme/admin/shared/header.phtml'       => [ 'install', 'remove', 'update' ],
         'theme/admin/shared/footer.phtml'       => [ 'install', 'remove', 'update' ],
+        'theme/admin/shared/pagination.phtml'   => [ 'install', 'remove', 'update' ],
         
         'theme/admin/static/css/tinymce.css'    => [ 'install', 'remove', 'update' ],
         'theme/admin/static/css/style.css'      => [ 'install', 'remove', 'update' ],
@@ -85,7 +86,8 @@ return [
             'Admin\\Model\\UserPermsChain' => 'modules/admin/model/UserPermsChain.php'
         ],
         'files' => [
-            'modules/admin/helper/html.php'
+            'modules/admin/helper/html.php',
+            'modules/admin/helper/page.php'
         ]
     ],
     '_gates' => [

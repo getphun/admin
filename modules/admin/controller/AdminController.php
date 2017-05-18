@@ -166,7 +166,7 @@ class AdminController extends \Controller
     
     public function show404(){
         $this->respond('error/404', [
-            'page_title' => 'Page not found',
+            'title' => 'Page not found',
             'nav_title'  => 'Error',
             'side_menu_active' => null,
             'top_menu_active'  => null
