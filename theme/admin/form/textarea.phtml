@@ -26,6 +26,11 @@
         $helper = $error ? $error : $desc;
         if($helper)
             $el_attrs['aria-describedby'] = $id . '-help-block';
+        
+        if(isset($attrs)){
+            foreach($attrs as $key => $val)
+                $el_attrs[$key] = $val;
+        }
     ?>
     
     <textarea <?= array_to_attr($el_attrs); ?>><?= $value ?></textarea>
