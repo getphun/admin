@@ -20,8 +20,8 @@ class AdminController extends \Controller
         
         $menus = $this->config->admin['menu'];
         uasort($menus, function($a, $b){
-            $a_order = isset($a->order) ? $a->order : 999999;
-            $b_order = isset($b->order) ? $b->order : 999999;
+            $a_order = isset($a['order']) ? $a['order'] : 99999999;
+            $b_order = isset($b['order']) ? $b['order'] : 99999999;
             return $a_order - $b_order;
         });
         
@@ -60,8 +60,8 @@ class AdminController extends \Controller
             if($submenu_exists && !$include_menu){
                 $submenus = $menu['submenu'];
                 uasort($submenus, function($a, $b){
-                    $a_order = isset($a['order']) ? $a['order'] : 999999;
-                    $b_order = isset($b['order']) ? $b['order'] : 999999;
+                    $a_order = isset($a['order']) ? $a['order'] : 99999999;
+                    $b_order = isset($b['order']) ? $b['order'] : 99999999;
                     return $a_order - $b_order;
                 });
                 
@@ -99,8 +99,8 @@ class AdminController extends \Controller
         
         if($active_submenu_list){
             uasort($active_submenu_list, function($a, $b){
-                $a_order = isset($a['order']) ? $a['order'] : 999999;
-                $b_order = isset($b['order']) ? $b['order'] : 999999;
+                $a_order = isset($a['order']) ? $a['order'] : 99999999;
+                $b_order = isset($b['order']) ? $b['order'] : 99999999;
                 return $a_order - $b_order;
             });
             
