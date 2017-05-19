@@ -23,6 +23,7 @@ return [
         'theme/admin/form/datetime.phtml'           => [ 'install', 'remove', 'update' ],
         'theme/admin/form/email.phtml'              => [ 'install', 'remove', 'update' ],
         'theme/admin/form/file.phtml'               => [ 'install', 'remove', 'update' ],
+        'theme/admin/form/hidden.phtml'             => [ 'install', 'remove', 'update' ],
         'theme/admin/form/multiple-ajax.phtml'      => [ 'install', 'remove', 'update' ],
         'theme/admin/form/multiple-file.phtml'      => [ 'install', 'remove', 'update' ],
         'theme/admin/form/month.phtml'              => [ 'install', 'remove', 'update' ],

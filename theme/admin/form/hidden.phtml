@@ -1,0 +1,11 @@
+<?php
+    $el_attrs = [
+        'type'  => $type,
+        'id'    => $id,
+        'name'  => $name
+    ];
+    
+    if($value)
+        $el_attrs['value'] = $value;
+?>
+<input <?= array_to_attr($el_attrs); ?>>
