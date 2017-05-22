@@ -12,7 +12,7 @@
             'class' => 'form-control'
         ];
         
-        if($value && $type != 'password')
+        if(!is_null($value) && $type != 'password')
             $el_attrs['value'] = $value;
         
         // alnumdash
