@@ -5,9 +5,9 @@ $(function(){
     tinymce.init({
         selector: '.tinymce',
         menubar: false,
-        toolbar: 'undo redo | styleselect | bold italic strikethrough | bullist numlist | table | link image media | pagebreak | fullscreen | code',
+        toolbar: 'styleselect | bold italic | bullist numlist | table | link image media | pagebreak | fullscreen | code',
         plugins: 'link lists table image media pagebreak fullscreen code',
-        height: 400,
+        height: 401,
         content_css: window.tMCE.cssContent,
         
         // pagebreak
