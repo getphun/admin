@@ -43,7 +43,7 @@ class MeController extends \AdminController
             return $this->_onLoggedIn();
         
         $params = [
-            'page_title' => 'Login',
+            'title' => 'Login',
             'nav_title'  => 'Login',
             'error' => false
         ];

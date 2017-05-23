@@ -22,3 +22,5 @@ return [
 1. More Home Widgets
     - Charts
 1. Pagination documentation
+1. TinyMCE uploader
+    1. Redesign theme?
