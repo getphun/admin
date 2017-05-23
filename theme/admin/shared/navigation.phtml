@@ -44,6 +44,12 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
+                        <?php if(module_exists('admin-me-setting')): ?>
+                        <li>
+                            <a href="<?= $this->router->to('adminMeSetting') ?>"><i class="fa fa-sliders" aria-hidden="true"></i> Setting</a>
+                        </li>
+                        <li role="separator" class="divider"></li>
+                        <?php endif; ?>
                         <li>
                             <a href="<?= $this->router->to('adminMeLogout') ?>"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
                         </li>

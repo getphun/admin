@@ -17,7 +17,7 @@ class HomeController extends \AdminController
             return $this->show404();
         
         $params = [
-            'title'  => $this->config->name,
+            'title'       => 'Home',
             'nav_title'   => $this->config->name,
             'active_menu' => 'home',
             'widgets'     => [],

@@ -9,7 +9,7 @@
         if($helper)
             $el_attrs['aria-describedby'] = $id . '-help-block';
         if(!is_array($value))
-            $value = (array)$value;
+            $value = $value ? [$value] : [];
         
         $btn_attrs = [
             'class' => 'btn btn-default btn-append multiple-file-pick',
