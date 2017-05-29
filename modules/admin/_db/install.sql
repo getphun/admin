@@ -24,3 +24,6 @@ CREATE TABLE IF NOT EXISTS `user_perms_chain` (
 )
     PARTITION BY KEY(`user`)
     PARTITIONS 50;
+
+INSERT IGNORE INTO `user` ( `id`, `name`, `password`, `fullname`, `status` ) VALUES 
+( 1, 'root', '$2y$10$0APx6EljuZioYeqY.twmOOwXKV6ETanSm53I.L0qzKGaBXiAvbupC', 'Root', 1 );
