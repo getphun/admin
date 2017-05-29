@@ -21,7 +21,7 @@ class UserController extends \AdminController
         if(!$q)
             return $this->ajax(['data'=>[]]);
         
-        $users = User::get(['q'=>$q, 'status'=>['__op', '>', '0']], 20, false, 'LENGTH(fullname)');
+        $users = User::get(['q'=>$q, 'status'=>['__op', '>', '0'], 'id' => ['__op', '!=', 1]], 20, false, 'LENGTH(fullname)');
         if(!$users)
             return $this->ajax(['data'=>[]]);
         
