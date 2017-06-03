@@ -24346,4 +24346,25 @@ $(function(){
         
         $this.typeahead({source: opts});
     });
+    
+    // graph
+    $('script[type="application/chart"]').each(function(i,e){
+        var $this = $(e);
+        var size  = $this.data('size');
+        var width = $this.parent().width();
+        var height= width;
+        if(size == 'wide')
+            height = Math.round((width/16)*9);
+        
+        var opts = JSON.parse($this.html());
+        
+        var canvas = $('<canvas></canvas>');
+        canvas.insertBefore($this);
+        canvas.attr({
+            'width': width,
+            'height': height
+        });
+        
+        new Chart(canvas, opts);
+    });
 });
