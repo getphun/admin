@@ -35,9 +35,13 @@
     <script src="<?= $this->asset('js/portal.min.js') ?>"></script>
     <?php endif; ?>
     <?php if(isset($jses)): ?>
-        <?php foreach($jses as $js): ?>
-        <script src="<?= $this->asset($js) ?>"></script>
-        <?php endforeach; ?>
+        <?php
+            foreach($jses as $js){
+                $abs = substr($js, 0, 4) === 'http';
+                $js  = $abs ? $js : $this->asset($js);
+                echo '<script src="' . $js . '"></script>';
+            }
+        ?>
     <?php endif; ?>
 </body>
 </html>
