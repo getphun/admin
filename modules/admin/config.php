@@ -87,8 +87,7 @@ return [
             'Admin\\Model\\UserPermsChain' => 'modules/admin/model/UserPermsChain.php'
         ],
         'files' => [
-            'modules/admin/helper/html.php',
-            'modules/admin/helper/page.php'
+            'modules/admin/helper/html.php'
         ]
     ],
     '_gates' => [
