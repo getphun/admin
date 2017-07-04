@@ -38,7 +38,7 @@
                 $tx.=   '<label for="' . $opt_attr['id'] . '">' . $opt->name . '</label>';
                 $tx.= '</div>';
                 
-                if(isset($opts[$opt->id]))
+                if(isset($opts[$opt->id]) && $opt->id != $opt->parent)
                     $tx.= $recursiver($opt->id, ($child_level));
             }
             
