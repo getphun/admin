@@ -12,18 +12,11 @@ INSERT IGNORE INTO `user_perms` ( `name`, `group`, `role`, `about` ) VALUES
     ( 'read_user',      'User',     'Management',   'Allow user to see exists users' );
 
 CREATE TABLE IF NOT EXISTS `user_perms_chain` (
-    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `id` INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
     `user` INTEGER NOT NULL,
     `user_perms` INTEGER NOT NULL,
-    `created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    
-    PRIMARY KEY (
-        `id`,
-        `user`
-    )
-)
-    PARTITION BY KEY(`user`)
-    PARTITIONS 50;
+    `created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 INSERT IGNORE INTO `user` ( `id`, `name`, `password`, `fullname`, `status` ) VALUES 
 ( 1, 'root', '$2y$10$0APx6EljuZioYeqY.twmOOwXKV6ETanSm53I.L0qzKGaBXiAvbupC', 'Root', 1 );
