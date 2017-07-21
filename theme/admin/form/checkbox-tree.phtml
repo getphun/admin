@@ -25,7 +25,8 @@
                     'name'  => $name . '[]',
                     'value' => $opt->id,
                     'id'    => sprintf('%s-%s', $id, $opt->id),
-                    'class' => 'styled'
+                    'class' => 'styled checkbox-tree',
+                    'data-parent' => sprintf('%s-%s', $id, $opt->parent)
                 ];
                 
                 if($helper)

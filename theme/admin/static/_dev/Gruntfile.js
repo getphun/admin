@@ -37,6 +37,7 @@ module.exports = function(grunt) {
                         'js/form-multiple-ajax.js',
                         'js/form-file.js',
                         'js/form-multiple-file.js',
+                        'js/form-checkbox-tree.js',
                         'js/Chart.js',
                         'js/slugify.js',
                         'js/main.js'
