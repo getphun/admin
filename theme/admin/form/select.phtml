@@ -11,6 +11,15 @@
             'class' => 'form-control'
         ];
         
+        if(isset($attrs)){
+            foreach($attrs as $key => $val){
+                if($key === 'class')
+                    $el_attrs['class'].= ' ' . $val;
+                else
+                    $el_attrs[$key] = $val;
+            }
+        }
+        
         if(count($options) > 10)
             $el_attrs['data-live-search'] = 'true';
         
