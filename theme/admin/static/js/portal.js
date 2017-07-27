@@ -8470,6 +8470,8 @@ window.Media = {
         Media._cb = cb;
         Media._form = opt.form;
         
+        Media._mime = opt.mime || 'image/*';
+        
         if(opt.mime)
             Media.el.btnUpload.attr('accept', opt.mime);
         else
@@ -8635,26 +8637,27 @@ $(function(){
         ],
         
         // file uploader
-//         file_browser_callback: function(fld, url, type, win){
-//             var filePickerOpt = {
-//                     target: '#' + fld,
-//                     form: 'tinymce.general'
-//                 };
-//             
-//             switch(type){
-//                 case 'image':
-//                     filePickerOpt.mime = 'image/*';
-//                     break;
-//                 case 'media':
-//                     filePickerOpt.mime = 'video/*';
-//                     break;
-//                 case 'file':
-//                     filePickerOpt.mime = '*';
-//                     break;
-//             }
-//             
-//             $.filePicker(filePickerOpt);
-//         }
+        file_browser_callback: function(fld, url, type, win){
+            var opts = {
+                form: tinymce.activeEditor.targetElm.getAttribute('data-form')
+            }
+            
+            switch(type){
+                case 'image':
+                    opts.mime = 'image/*';
+                    break;
+                case 'media':
+                    opts.mime = 'video/*';
+                    break;
+                case 'file':
+                    opts.mime = '*';
+                    break;
+            }
+            
+            Media.pick(opts, function(file){
+                $('#'+fld).val(file);
+            });
+        }
     });
 });
 /*! version : 4.17.46

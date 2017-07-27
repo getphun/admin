@@ -20,6 +20,8 @@ window.Media = {
         Media._cb = cb;
         Media._form = opt.form;
         
+        Media._mime = opt.mime || 'image/*';
+        
         if(opt.mime)
             Media.el.btnUpload.attr('accept', opt.mime);
         else
