@@ -7,6 +7,9 @@ CREATE TABLE IF NOT EXISTS `user_perms` (
     `created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+INSERT IGNORE INTO `site_param` ( `name`, `type`, `group`, `value` ) VALUES
+    ( 'google_map_api_key', 1, 'Code', '' );
+
 INSERT IGNORE INTO `user_perms` ( `name`, `group`, `role`, `about` ) VALUES
     ( 'read_admin',     'Admin',    'Admin',        'Allow user to open admin panel home' ),
     ( 'read_user',      'User',     'Management',   'Allow user to see exists users' );

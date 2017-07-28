@@ -1,0 +1,34 @@
+<div class="form-group<?= ($error?' has-error':'') ?>">
+    <?php if(!isset($nolabel) || !$nolabel): ?>
+    <label for="<?= $id ?>"><?= $label ?></label>
+    <?php endif; ?>
+    
+    <?php
+        $helper = $error ? $error : $desc;
+    ?>
+    
+    <div class="panel panel-default panel-form-map">
+        <div class="panel-body">
+            <?php
+                $el_attrs = [
+                    'type'          => 'text',
+                    'class'         => 'form-control form-map',
+                    'data-picker'   => $id . '-map-picker',
+                    'data-map-api'  => $this->setting->google_map_api_key,
+                    'placeholder'   => $label,
+                    'id'            => $id
+                ];
+            ?>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                <input <?= array_to_attr($el_attrs) ?>>
+            </div>
+        </div>
+        
+        <div class="map-picker" id="<?= $id ?>-map-picker"></div>
+    </div>
+    
+    <?php if($helper): ?>
+    <span id="<?= $id ?>-help-block" class="help-block"><?= $helper ?></span>
+    <?php endif; ?>
+</div>

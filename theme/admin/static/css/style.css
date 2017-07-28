@@ -4486,6 +4486,17 @@ button.list-group-item-danger.active:focus {
   right: 10px;
   top: 10px;
 }
+.panel.panel-form-map {
+  border: 0 none;
+}
+.panel.panel-form-map .panel-body {
+  padding: 0;
+}
+.panel.panel-form-map .map-picker {
+  height: 222px;
+  border: 1px solid #ddd;
+  border-top: 0 none;
+}
 .panel.panel-form-list {
   border: 0 none;
 }
