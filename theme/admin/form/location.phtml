@@ -16,8 +16,29 @@
                     'data-picker'   => $id . '-map-picker',
                     'data-map-api'  => $this->setting->google_map_api_key,
                     'placeholder'   => $label,
-                    'id'            => $id
+                    'id'            => $id,
+                    'name'          => $name
                 ];
+                
+                if(isset($attrs)){
+                    foreach($attrs as $key => $val){
+                        if($key === 'class')
+                            $el_attrs['class'].= ' ' . $val;
+                        else
+                            $el_attrs[$key] = $val;
+                    }
+                }
+                
+                if(!is_null($value))
+                    $el_attrs['value'] = $value;
+                
+                // required
+                if(isset($rules['required']))
+                    $el_attrs['required'] = 'required';
+                
+                $helper = $error ? $error : $desc;
+                if($helper)
+                    $el_attrs['aria-describedby'] = $id . '-help-block';
             ?>
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
