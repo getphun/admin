@@ -18,7 +18,7 @@
     <script>
         window.tMCE = { cssContent: '<?= $this->asset('/css/tinymce.css') ?>' };
         <?php if(module_exists('upload')): ?>
-        window.tMedia = { filter: '<?= $this->router->to("siteMediaFilter"); ?>', upload: '<?= $this->router->to("fileUpload"); ?>' };
+        window.tMedia = { filter: '<?= $this->router->to("adminMediaFilter"); ?>', upload: '<?= $this->router->to("adminFileUpload"); ?>' };
         <?php endif; ?>
     </script>
 </head>
