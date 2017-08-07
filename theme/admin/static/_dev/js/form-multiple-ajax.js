@@ -9,6 +9,7 @@ $(function(){
         
         $this.typeahead({
             delay: 300,
+            fitToElement: true,
             source: function(q,cb){
                 $.get(this.$element.data('source'), {q: q}, function(res){
                     if(res.error || !res.data)

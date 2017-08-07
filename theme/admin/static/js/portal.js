@@ -11916,6 +11916,7 @@ $(function(){
         
         $this.typeahead({
             delay: 300,
+            fitToElement: true,
             source: function(q,cb){
                 $.get(this.$element.data('source'), {q: q}, function(res){
                     if(res.error || !res.data)
@@ -24837,7 +24838,10 @@ $(function(){
         for(var i=0; i<options.length; i++)
             opts.push(options[i].value);
         
-        $this.typeahead({source: opts});
+        $this.typeahead({
+            source: opts,
+            fitToElement: true
+        });
     });
     
     // graph

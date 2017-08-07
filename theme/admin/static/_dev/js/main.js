@@ -65,7 +65,10 @@ $(function(){
         for(var i=0; i<options.length; i++)
             opts.push(options[i].value);
         
-        $this.typeahead({source: opts});
+        $this.typeahead({
+            source: opts,
+            fitToElement: true
+        });
     });
     
     // graph
