@@ -111,6 +111,10 @@ return [
             'adminMeLogout' => [
                 'rule' => '/logout',
                 'handler' => 'Admin\\Controller\\Me::logout'
+            ],
+            'adminFileUpload' => [
+                'rule' => '/comp/upload',
+                'handler' => 'Upload\\Controller\\Main::upload'
             ]
         ]
     ],
