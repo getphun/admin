@@ -113,6 +113,7 @@ return [
                 'handler' => 'Admin\\Controller\\Me::logout'
             ],
             'adminFileUpload' => [
+                'module' => 'upload',
                 'rule' => '/comp/upload',
                 'handler' => 'Upload\\Controller\\Main::upload'
             ]
