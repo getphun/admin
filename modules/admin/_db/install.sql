@@ -6,6 +6,7 @@ CREATE TABLE IF NOT EXISTS `user_perms` (
     `about` TEXT,
     `created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+CREATE INDEX `by_group` ON `user_perms` ( `group` );
 
 INSERT IGNORE INTO `site_param` ( `name`, `type`, `group`, `value` ) VALUES
     ( 'google_map_api_key', 1, 'Code', '' );
@@ -20,6 +21,8 @@ CREATE TABLE IF NOT EXISTS `user_perms_chain` (
     `user_perms` INTEGER NOT NULL,
     `created` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+CREATE INDEX `by_user` ON `user_perms_chain` ( `user` );
+CREATE INDEX `by_user_perms` ON `user_perms_chain` ( `user_perms` );
 
 INSERT IGNORE INTO `user` ( `id`, `name`, `password`, `fullname`, `status` ) VALUES 
 ( 1, 'root', '$2y$10$0APx6EljuZioYeqY.twmOOwXKV6ETanSm53I.L0qzKGaBXiAvbupC', 'Root', 1 );
