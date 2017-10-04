@@ -6,10 +6,10 @@
                     <div class="col-xs-9">
                         <input type="search" class="form-control" placeholder="Find file" id="drawer-media-filter">
                     </div>
-                    <div class="col-xs-3 drawer-media-button">
+                    <form class="col-xs-3 drawer-media-button" id="drawer-media-upload-form">
                         <input type="file" id="drawer-media-upload" title="Upload new file">
-                        <button class="btn btn-default"><i class="fa fa-upload" aria-hidden="true"></i></button>
-                    </div>
+                        <button class="btn btn-default" type="button"><i class="fa fa-upload" aria-hidden="true"></i></button>
+                    </form>
                 </div>
                 <hr>
                 
@@ -32,7 +32,7 @@
     <?php else: ?>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="<?= $this->asset('js/tinymce/tinymce.min.js') ?>"></script>
-    <script src="<?= $this->asset('js/portal.min.js') ?>"></script>
+    <script src="<?= $this->asset('js/portal.min.js') ?>?v=1"></script>
     <?php endif; ?>
     <?php if(isset($jses)): ?>
         <?php

@@ -8,7 +8,7 @@
     <?php if(is_dev()): ?>
     <link rel="stylesheet" href="<?= $this->asset('css/style.css'); ?>">
     <?php else: ?>
-    <link rel="stylesheet" href="<?= $this->asset('css/style.min.css'); ?>">
+    <link rel="stylesheet" href="<?= $this->asset('css/style.min.css'); ?>?v=1">
     <?php endif; ?>
     <?php if(isset($csses)): ?>
         <?php foreach($csses as $css): ?>

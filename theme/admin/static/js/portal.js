@@ -8460,11 +8460,12 @@ window.Media = {
     _form: null,
     
     el: {
-        drawer: $('#drawer-media'),
+        drawer   : $('#drawer-media'),
         inpFilter: $('#drawer-media-filter'),
         btnUpload: $('#drawer-media-upload'),
+        btnUpForm: $('#drawer-media-upload-form'),
         lisResult: $('#drawer-media-search-result'),
-        loading: $('#drawer-media-loading')
+        loading  : $('#drawer-media-loading')
     },
     
     init: function(){
@@ -8478,10 +8479,7 @@ window.Media = {
         
         Media._mime = opt.mime || 'image/*';
         
-        if(opt.mime)
-            Media.el.btnUpload.attr('accept', opt.mime);
-        else
-            Media.el.btnUpload.removeAttr('accept');
+        Media.el.btnUpload.attr('accept', Media._mime);
         
         Media.el.loading.hide();
         Media.el.drawer.drawer('show');
@@ -8576,11 +8574,12 @@ window.Media = {
                 Media.loader('Uploading...');
                 Media.upload.send(file, {form: Media._form}, function(err, data){
                     Media.loader(false);
+                    Media.el.drawer.drawer('hide');
                     if(err)
                         return bootbox.alert({title: 'Error', message: err});
                     
                     Media._cb(data.path);
-                    Media.el.drawer.drawer('hide');
+                    Media.el.btnUpForm.get(0).reset();
                 });
             });
         },
@@ -8599,10 +8598,14 @@ window.Media = {
             xhr.onreadystatechange = function(){
                 if(xhr.readyState == 4){
                     if(xhr.status == 200){
-                        var res = window.JSON.parse(xhr.responseText);
-                        if(res.error)
-                            return cb(res.error);
-                        return cb(false, res);
+                        try{
+                            var res = window.JSON.parse(xhr.responseText);
+                            if(res.error)
+                                return cb(res.error);
+                            return cb(false, res);
+                        }catch(e){
+                            return cb(e);
+                        }
                     }else{
                         cb('Internal Server Error');
                     }
@@ -8614,7 +8617,7 @@ window.Media = {
     }
 }
 
-Media.init();
+$(Media.init);
 $(function(){
     if(!$('.tinymce').get(0))
         return;
