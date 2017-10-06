@@ -116,6 +116,11 @@ return [
                 'module' => 'upload',
                 'rule' => '/comp/upload',
                 'handler' => 'Upload\\Controller\\Main::upload'
+            ],
+            'adminMediaFilter' => [
+                'module' => 'media',
+                'rule' => '/comp/media/filter',
+                'handler' => 'Media\\Controller\\Media::filter'
             ]
         ]
     ],
