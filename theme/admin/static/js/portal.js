@@ -8458,6 +8458,7 @@ window.Media = {
     _cb: $.noop,
     _mime: 'image/*',
     _form: null,
+    _multiple: false,
     
     el: {
         drawer   : $('#drawer-media'),
@@ -8476,10 +8477,14 @@ window.Media = {
     pick: function(opt, cb){
         Media._cb = cb;
         Media._form = opt.form;
-        
+        Media._multiple = opt.multiple || false;
         Media._mime = opt.mime || 'image/*';
         
         Media.el.btnUpload.attr('accept', Media._mime);
+        if(Media._multiple)
+            Media.el.btnUpload.prop('multiple', true);
+        else
+            Media.el.btnUpload.removeProp('multiple');
         
         Media.el.loading.hide();
         Media.el.drawer.drawer('show');
@@ -8568,20 +8573,48 @@ window.Media = {
     },
     
     upload: {
+        _files: [],
+        _fileIndex: 0,
+        
         init: function(){
             Media.el.btnUpload.on('change', function(){
-                var file = $(this).get(0).files[0];
-                Media.loader('Uploading...');
-                Media.upload.send(file, {form: Media._form}, function(err, data){
-                    Media.loader(false);
-                    Media.el.drawer.drawer('hide');
-                    if(err)
-                        return bootbox.alert({title: 'Error', message: err});
-                    
-                    Media._cb(data.path);
-                    Media.el.btnUpForm.get(0).reset();
-                });
+                Media.upload._files = $(this).get(0).files;
+                Media.upload._fileIndex = 0;
+                Media.upload.next();
             });
+        },
+        
+        next: function(){
+            var file = Media.upload._files[Media.upload._fileIndex];
+            Media.upload._fileIndex++;
+            
+            if(!file)
+                return Media.upload.done();
+            
+            var loaderLabel = 'Uploading...';
+            if(Media._multiple){
+                var fileLen = Media.upload._files.length;
+                var fileInd = Media.upload._fileIndex;
+                loaderLabel+= ' ( '+fileInd+'/'+fileLen+' )';
+            }
+            Media.loader(loaderLabel);
+            
+            Media.upload.send(file, {form: Media._form}, function(err, data){
+                if(err)
+                    return Media.upload.done(err);
+                Media._cb(data.path);
+                Media.upload.next();
+            });
+        },
+        
+        done: function(err){
+            Media.loader(false);
+            Media.el.drawer.drawer('hide');
+            Media.upload._fileIndex = 0;
+            Media.upload._files = [];
+            Media.el.btnUpForm.get(0).reset();
+            if(err)
+                 bootbox.alert({title: 'Error', message: err});
         },
         
         send: function(file, params, cb){
@@ -12003,7 +12036,8 @@ window.MMedia = {
             
             Media.pick({
                 form: $this.data('form'),
-                mime: $this.data('accept')
+                mime: $this.data('accept'),
+                multiple: true
             }, function(file){
                 if(!file)
                     return;

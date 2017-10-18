@@ -11,7 +11,8 @@ window.MMedia = {
             
             Media.pick({
                 form: $this.data('form'),
-                mime: $this.data('accept')
+                mime: $this.data('accept'),
+                multiple: true
             }, function(file){
                 if(!file)
                     return;
