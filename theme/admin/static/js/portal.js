@@ -8658,10 +8658,26 @@ $(function(){
     tinymce.init({
         selector: '.tinymce',
         menubar: false,
-        toolbar: 'styleselect | bold italic | bullist numlist | table | link image media | pagebreak | fullscreen',
-        plugins: 'link lists table image media pagebreak fullscreen paste',
+        toolbar: 'styleselect | bold italic | bullist numlist | table | link image media codesample | pagebreak | fullscreen',
+        plugins: 'link lists table image media pagebreak fullscreen paste codesample',
         height: 403,
         content_css: window.tMCE.cssContent,
+        
+        // codesample
+        codesample_dialog_height: 400,
+        codesample_languages: [
+            {text: 'HTML/XML',      value: 'markup'},
+            {text: 'JavaScript',    value: 'javascript'},
+            {text: 'CSS',           value: 'css'},
+            {text: 'PHP',           value: 'php'},
+            {text: 'Markdown',      value: 'markdown'},
+            
+            {text: 'SQL',           value: 'sql'},
+            {text: 'Apache',        value: 'apacheconf'},
+            {text: 'Nginx',         value: 'nginx'},
+            {text: 'Bash',          value: 'bash'},
+            {text: 'JSON',          value: 'json'}
+        ],
         
         // pagebreak
         pagebreak_separator: '<!-- PAGE BREAK -->',
@@ -8670,22 +8686,7 @@ $(function(){
         paste_word_valid_elements: 'h1,h2,h3,h4,h5,h6,p,strong,em,span,sup,sub,code,blockquote,div,pre,ul,ol,li,table,thead,tbody,th,td,tr,a,figure,figcaption',
         paste_merge_formats: true,
         paste_preprocess: function(plugin, args){
-            var rms = [
-                    [/<\/?font[^>]*>/g, ''],            // remove <font> tag
-                    [/ valign="[^"]+"/g, ''],           // remove valign attribute
-                    [/<br ?\/>/g, '<br>'],              // convert <br /> to <br>
-                    [/<br>([ \n]*)<br>/g, '<br>'],      // remove too close <br>
-                    [/<a([^>]*)><\/a>/g, ''],           // remove empty <a>
-                    [/<([\/]?)b>/g, '<$1strong>'],      // convert b to strong
-                    [/ style="([^"]+)"/g, '']           // remove style attribute
-                ];
             
-            for(var i=0 ;i<rms.length; i++){
-                var rm = rms[i];
-                args.content = args.content.replace(rm[0], rm[1]);
-            }
-            
-            console.log(args.content);
         },
         paste_postprocess: function(plugin, args){
             

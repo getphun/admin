@@ -21,7 +21,7 @@
             $el_attrs['aria-describedby'] = $id . '-help-block';
     ?>
     
-    <textarea <?= array_to_attr($el_attrs); ?>><?= $value ?></textarea>
+    <textarea <?= array_to_attr($el_attrs); ?>><?= htmlspecialchars($value) ?></textarea>
     
     <?php if($helper): ?>
     <span id="<?= $id ?>-help-block" class="help-block"><?= $helper ?></span>
