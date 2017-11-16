@@ -8659,7 +8659,7 @@ $(function(){
         selector: '.tinymce',
         menubar: false,
         toolbar: 'styleselect | bold italic | bullist numlist | table | link image media codesample | pagebreak | fullscreen',
-        plugins: 'link lists table image media pagebreak fullscreen paste codesample',
+        plugins: 'link lists table image media pagebreak fullscreen paste codesample textpattern',
         height: 403,
         content_css: window.tMCE.cssContent,
         
@@ -8702,6 +8702,23 @@ $(function(){
         rel_list: [
             { title: 'None', value: '' },
             { title: 'No Follow', value: 'nofollow' }
+        ],
+        
+        // textpattern
+        textpattern_patterns: [
+            { start: '`', end: '`', format: 'code' },
+            { start: '*', end: '*', format: 'italic' },
+            { start: '**', end: '**', format: 'bold' },
+            { start: '***', end: '***', format: ['bold', 'italic'] },
+            { start: '#', format: 'h1' },
+            { start: '##', format: 'h2' },
+            { start: '###', format: 'h3' },
+            { start: '####', format: 'h4' },
+            { start: '#####', format: 'h5' },
+            { start: '######', format: 'h6' },
+            { start: '1. ', cmd: 'InsertOrderedList' },
+            { start: '* ', cmd: 'InsertUnorderedList' },
+            { start: '- ', cmd: 'InsertUnorderedList' }
         ],
         
         // file uploader
