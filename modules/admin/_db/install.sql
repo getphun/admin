@@ -26,3 +26,5 @@ CREATE INDEX `by_user_perms` ON `user_perms_chain` ( `user_perms` );
 
 INSERT IGNORE INTO `user` ( `id`, `name`, `password`, `fullname`, `status` ) VALUES 
 ( 1, 'root', '$2y$10$0APx6EljuZioYeqY.twmOOwXKV6ETanSm53I.L0qzKGaBXiAvbupC', 'Root', 1 );
+
+ALTER TABLE `user` ADD COLUMN `role` VARCHAR(40) DEFAULT '' AFTER `fullname`;

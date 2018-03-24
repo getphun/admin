@@ -13,6 +13,24 @@ return [
         'admin' => [
             'path' => '/admin'
         ]
+    ],
+    
+    // Jika menggunakan permission berdasarkan role, maka tambahkan daftar role
+    // user sebagai berikut:
+    'admin' => [
+        'roles' => [
+            // role name
+            'operator' => [
+                // perms role list
+                'Admin' => true,
+                'Management' => true
+            ],
+            'administrator' => [
+                'Admin' => true,
+                'Management' => true,
+                'Administrator' => true
+            ]
+        ]
     ]
 ];
 ```

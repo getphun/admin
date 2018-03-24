@@ -151,6 +151,8 @@ return [
                 'perms' => 'read_home',
                 'order' => 1
             ]
+        ],
+        'roles' => [
         ]
     ]
 ];
