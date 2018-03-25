@@ -148,7 +148,7 @@ return [
                 'label' => 'Home',
                 'target' => 'adminHome',
                 'icon' => 'home',
-                'perms' => 'read_home',
+                'perms' => 'read_admin',
                 'order' => 1
             ]
         ],
