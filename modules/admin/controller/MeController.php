@@ -15,10 +15,10 @@ class MeController extends \AdminController
     private function _onLoggedIn(){
         $next = $this->req->getQuery('next');
         if(!$next){
-            $admin_perms = UPerms::get(['name'=>'read_admin'],1);
+            $admin_perms = UPerms::get(['name'=>'read_admin'],false);
             
             if($admin_perms){
-                $allowed = UPChain::get(['user'=>$this->user->id, 'user_perms'=>$admin_perms->id],1);
+                $allowed = UPChain::get(['user'=>$this->user->id, 'user_perms'=>$admin_perms->id],false);
                 if($allowed)
                     $next = $this->router->to('adminHome');
             }
