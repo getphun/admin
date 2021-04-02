@@ -1,9 +1,9 @@
 $(function(){
-    
+
     // bootstrap select mobile support
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent))
         $('select.form-control').selectpicker('mobile');
-    
+
     $('.selectpicker[data-ajax]').selectpickerAjax({
         ajaxPreProcess: function(res){
             if(res.error)
@@ -14,20 +14,20 @@ $(function(){
             return result;
         }
     });
-    
+
     // bootstrap select
     $('select.form-control').each(function(i,e){
         var $this = $(e);
-        
+
         $this.selectpicker();
     });
-    
+
     // datepicker
     // - date YYYY-MM-DD
     // - datetime YYYY-MM-DD HH:mm:ss
     $('.form-control.form-date').each(function(i,e){
         var $this  = $(e);
-        
+
         var format = 'YYYY-MM-DD HH:mm:ss';
         switch($this.data('type')){
             case 'date':
@@ -40,7 +40,7 @@ $(function(){
                 format = 'HH:mm:ss';
                 break;
         }
-        
+
         $(e).parent().datetimepicker({
             format: format,
             icons: {
@@ -53,24 +53,24 @@ $(function(){
             }
         });
     });
-    
+
     // typeahead from datalist
     $('.form-control[list]').each(function(i,e){
         var $this = $(e);
         var datalist = $('#'+$this.attr('list'));
         var options  = datalist.children('option');
         $this.removeAttr('list');
-        
+
         var opts = [];
         for(var i=0; i<options.length; i++)
             opts.push(options[i].value);
-        
+
         $this.typeahead({
             source: opts,
             fitToElement: true
         });
     });
-    
+
     // graph
     $('script[type="application/chart"]').each(function(i,e){
         var $this = $(e);
@@ -79,16 +79,19 @@ $(function(){
         var height= width;
         if(size == 'wide')
             height = Math.round((width/16)*9);
-        
+
         var opts = JSON.parse($this.html());
-        
+
+        if($this.data('callback'))
+            opts = window[$this.data('callback')](opts);
+
         var canvas = $('<canvas></canvas>');
         canvas.insertBefore($this);
         canvas.attr({
             'width': width,
             'height': height
         });
-        
+
         new Chart(canvas, opts);
     });
 });

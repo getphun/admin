@@ -8,7 +8,7 @@
 
 return [
     '__name' => 'admin',
-    '__version' => '0.0.1',
+    '__version' => '0.1.0',
     '__git' => 'https://github.com/getphun/admin',
     '__files' => [
         'modules/admin' => [ 'install', 'remove', 'update' ],

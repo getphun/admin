@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-    
+
     grunt.initConfig({
         concat: {
             default: {
@@ -14,11 +14,11 @@ module.exports = function(grunt) {
                         'js/dropdown.js',
                         'js/modal.js',
                         'js/tooltip.js',
-//                         'js/popover.js',
+                        'js/popover.js',
 //                         'js/scrollspy.js',
                         'js/tab.js',
 //                         'js/affix.js',
-                     
+
                         'js/moment.js',
                         'js/drawer.js',
                         'js/autofocus.js',
@@ -47,7 +47,7 @@ module.exports = function(grunt) {
                 }
             }
         },
-        
+
         less: {
             default: {
                 files: {
@@ -63,12 +63,12 @@ module.exports = function(grunt) {
                 }
             }
         },
-        
+
         watch: {
             files: ['js/*.js', 'less/*.less', 'less/mixins/*.less', 'less/*/*.less'],
             tasks: ['concat', 'less']
         },
-        
+
         uglify: {
             dist: {
                 files: {
@@ -82,13 +82,13 @@ module.exports = function(grunt) {
             }
         }
     });
-    
+
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    
-    
+
+
     grunt.registerTask('dist', [
         'less:default',
         'less:dist',
